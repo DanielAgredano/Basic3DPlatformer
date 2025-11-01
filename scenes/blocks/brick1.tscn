@@ -1,0 +1,14 @@
+[gd_scene load_steps=3 format=3 uid="uid://b351nyv4l6l13"]
+
+[ext_resource type="PackedScene" uid="uid://cr6ox3ockrlg1" path="res://models/KayKit_BlockBits_1.0_FREE/Assets/gltf/bricks_A.gltf" id="1_vh6nc"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_flm4d"]
+
+[node name="Block" type="Node3D"]
+
+[node name="bricks_A2" parent="." instance=ExtResource("1_vh6nc")]
+
+[node name="StaticBody3D" type="StaticBody3D" parent="."]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D"]
+shape = SubResource("BoxShape3D_flm4d")

@@ -1,0 +1,11 @@
+[gd_scene load_steps=2 format=3 uid="uid://wf5qhcr1s0a6"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_n5naa"]
+
+[node name="Block" type="Node3D"]
+
+[node name="StaticBody3D" type="StaticBody3D" parent="."]
+collision_mask = 0
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D"]
+shape = SubResource("BoxShape3D_n5naa")

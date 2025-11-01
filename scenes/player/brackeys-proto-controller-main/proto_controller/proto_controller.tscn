@@ -1,0 +1,96 @@
+[gd_scene load_steps=7 format=3 uid="uid://bs72ogkvdd7d6"]
+
+[ext_resource type="Script" uid="uid://d3f53xkbhjw5" path="res://scenes/player/brackeys-proto-controller-main/proto_controller/proto_controller.gd" id="1_ucva2"]
+[ext_resource type="PackedScene" uid="uid://c5tdhx70wpesv" path="res://models/fox/fox.glb" id="2_8lji6"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_iof21"]
+albedo_color = Color(0.91806, 0.575202, 0.222449, 1)
+
+[sub_resource type="CapsuleMesh" id="CapsuleMesh_ucva2"]
+radius = 0.4
+height = 1.8
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_iof21"]
+radius = 0.4
+height = 1.4
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_1ykab"]
+radius = 0.6
+height = 1.5488281
+
+[node name="ProtoController" type="CharacterBody3D"]
+transform = Transform3D(0.99999994, 0, 0, 0, 1, 0, 0, 0, 0.99999994, 0, 0, 0)
+script = ExtResource("1_ucva2")
+
+[node name="Mesh" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.9, 0)
+visible = false
+material_override = SubResource("StandardMaterial3D_iof21")
+cast_shadow = 0
+mesh = SubResource("CapsuleMesh_ucva2")
+
+[node name="Collider" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, -5.9604645e-08, 0, 1, 0, 5.9604645e-08, 0, 1, 0, 0.7, 0)
+shape = SubResource("CapsuleShape3D_iof21")
+
+[node name="Head" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.4, 4)
+
+[node name="Camera3D" type="Camera3D" parent="Head"]
+
+[node name="Hitbox" type="Area3D" parent="."]
+collision_layer = 2
+collision_mask = 0
+
+[node name="Shape" type="CollisionShape3D" parent="Hitbox"]
+transform = Transform3D(1, 0, -5.9604645e-08, 0, 1, 0, 5.9604645e-08, 0, 1, 0, 0.6986325, 0)
+shape = SubResource("CapsuleShape3D_1ykab")
+
+[node name="fox" parent="." instance=ExtResource("2_8lji6")]
+transform = Transform3D(-0.9848077, 0, -0.17364809, 0, 1, 0, 0.17364809, 0, -0.9848077, 0, 0.1, 0)
+
+[node name="Skeleton3D" parent="fox/IdleDemo" index="0"]
+bones/0/position = Vector3(0.10307393, 0.20969293, 0.03465251)
+bones/0/rotation = Quaternion(0, 0.5601904, 0.828364, 0)
+bones/1/position = Vector3(1.2216565e-06, -9.812995e-06, 5.823445e-05)
+bones/4/position = Vector3(1.8517199e-09, 0.41835964, 1.1740602e-05)
+bones/4/rotation = Quaternion(-0.067384414, 0.0009919773, -0.0013182228, 0.9977258)
+bones/5/rotation = Quaternion(0.013479795, 0.0019131189, 0.047693945, 0.9987692)
+bones/5/scale = Vector3(1.0000001, 0.8853208, 1)
+bones/6/rotation = Quaternion(-0.67275953, 1.2755567e-09, -7.2985573e-10, 0.7398613)
+bones/8/rotation = Quaternion(-0.52579737, -0.3775864, -0.26335695, 0.7152683)
+bones/9/rotation = Quaternion(-1.639669e-06, -2.2385467e-07, -0.5876602, 0.80910784)
+bones/10/rotation = Quaternion(0.66920257, 0.040716916, 0.3216831, 0.6686031)
+bones/11/position = Vector3(0.3500534, 0.007650681, 0.13360007)
+bones/11/rotation = Quaternion(-0.65794003, -0.0016335445, 0.00023069808, 0.7530686)
+bones/12/position = Vector3(0.33296734, 0.021214351, -0.060704708)
+bones/12/rotation = Quaternion(-0.65793985, -0.001633543, 0.00023069808, 0.7530687)
+bones/14/rotation = Quaternion(-0.5141785, 0.1021801, 0.1969402, 0.82848907)
+bones/15/rotation = Quaternion(-1.8268383e-06, 2.1249875e-07, 0.46371105, 0.88598645)
+bones/16/position = Vector3(-0.39116055, -0.038288563, -0.046064243)
+bones/16/rotation = Quaternion(-0.65794003, -0.0016335445, 0.00023069808, 0.7530686)
+bones/17/rotation = Quaternion(-0.65794003, -0.0016335445, 0.00023069808, 0.7530686)
+bones/18/rotation = Quaternion(-0.6855943, 0.0010785919, 0.002914475, 0.72797716)
+bones/19/rotation = Quaternion(0.21387893, 1.2152277e-15, 1.4169772e-10, 0.9768602)
+bones/20/rotation = Quaternion(0.20106992, -1.644476e-10, 2.569495e-10, 0.97957695)
+bones/21/rotation = Quaternion(-0.03562235, 6.112495e-11, -1.9213296e-10, 0.9993654)
+bones/22/position = Vector3(3.5643049e-09, -0.021669155, -0.0029410196)
+bones/22/rotation = Quaternion(0.9977339, 0.0013182117, 0.0009919807, -0.06726388)
+bones/22/scale = Vector3(0.932483, 0.9324878, 0.9321496)
+bones/23/rotation = Quaternion(-0.76593024, 0.0153105855, -0.017180687, 0.6425118)
+bones/23/scale = Vector3(1.0000002, 1.000052, 0.99990517)
+bones/24/rotation = Quaternion(0.8802173, 2.1128766e-08, -3.640487e-07, 0.47457078)
+bones/24/scale = Vector3(1, 1.0000433, 0.99994296)
+bones/25/rotation = Quaternion(0.017168568, -0.010251725, 0.009293938, 0.99975693)
+bones/25/scale = Vector3(1.0000001, 1.000176, 0.9998745)
+bones/26/rotation = Quaternion(0.5864199, -3.9911246e-08, 2.3922385e-07, 0.8100072)
+bones/26/scale = Vector3(0.99999994, 1.0002605, 0.99968785)
+bones/27/position = Vector3(-0.10307393, 0.18250461, -0.19291165)
+bones/27/rotation = Quaternion(0, 0.084820606, 0.9963963, 0)
+bones/28/position = Vector3(-1.2420317e-06, -2.0396565e-05, 2.442689e-05)
+
+[node name="AnimationPlayer" parent="fox" index="2"]
+autoplay = "Idle"
+next/Jump = &"Fall"
+
+[editable path="fox"]
