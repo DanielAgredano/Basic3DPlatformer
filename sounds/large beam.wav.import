@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://bbdoa204bpg64"
+path="res://.godot/imported/large beam.wav-e0ca0087dca2ef6c4349283dfae6fc06.sample"
+
+[deps]
+
+source_file="res://sounds/large beam.wav"
+dest_files=["res://.godot/imported/large beam.wav-e0ca0087dca2ef6c4349283dfae6fc06.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=0

@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://cldmeca1un6y7"
+path="res://.godot/imported/sword shine 2.wav-d2c0812459aae0297b50b4e65c7053e3.sample"
+
+[deps]
+
+source_file="res://sounds/sword shine 2.wav"
+dest_files=["res://.godot/imported/sword shine 2.wav-d2c0812459aae0297b50b4e65c7053e3.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=0

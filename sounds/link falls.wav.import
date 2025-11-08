@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://dqjkk5affp3ja"
+path="res://.godot/imported/link falls.wav-7dbd38ab3b33d785360fcd63ecea0f1c.sample"
+
+[deps]
+
+source_file="res://sounds/link falls.wav"
+dest_files=["res://.godot/imported/link falls.wav-7dbd38ab3b33d785360fcd63ecea0f1c.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=0

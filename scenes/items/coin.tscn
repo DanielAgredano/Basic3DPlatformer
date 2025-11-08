@@ -148,6 +148,7 @@ _data = [Vector2(0, 1), 0.0, 0.0, 0, 0, Vector2(1, -200), -457.72043, 0.0, 0, 0]
 point_count = 2
 
 [node name="Coin" type="Node3D"]
+process_mode = 1
 script = ExtResource("1_fgdtj")
 
 [node name="Model" type="CSGCylinder3D" parent="."]

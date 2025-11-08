@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://depydg6tkii65"
+path="res://.godot/imported/wallet 1(loop).wav-ee019dbe65ac2cc737bf3a28981b68bd.sample"
+
+[deps]
+
+source_file="res://sounds/wallet 1(loop).wav"
+dest_files=["res://.godot/imported/wallet 1(loop).wav-ee019dbe65ac2cc737bf3a28981b68bd.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=2
+edit/loop_begin=0
+edit/loop_end=-23051
+compress/mode=0

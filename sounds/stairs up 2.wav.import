@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://dgvfevlfs5mnq"
+path="res://.godot/imported/stairs up 2.wav-812a6d05c0afe66988eb9d14eda0ab74.sample"
+
+[deps]
+
+source_file="res://sounds/stairs up 2.wav"
+dest_files=["res://.godot/imported/stairs up 2.wav-812a6d05c0afe66988eb9d14eda0ab74.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=0

@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://dogu5lkql8va8"
+path="res://.godot/imported/magic meter 2.wav-89816a9788fe4a6b5c95a0da54c0ab33.sample"
+
+[deps]
+
+source_file="res://sounds/magic meter 2.wav"
+dest_files=["res://.godot/imported/magic meter 2.wav-89816a9788fe4a6b5c95a0da54c0ab33.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=0

@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://svk7kjwvhrwd"
+path="res://.godot/imported/link hurt.wav-75a69a37c64209a363850bdab7936b6e.sample"
+
+[deps]
+
+source_file="res://sounds/link hurt.wav"
+dest_files=["res://.godot/imported/link hurt.wav-75a69a37c64209a363850bdab7936b6e.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=0

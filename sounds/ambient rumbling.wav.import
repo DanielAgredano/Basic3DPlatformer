@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://b2nd1ujg0krfr"
+path="res://.godot/imported/ambient rumbling.wav-12c930111ffda81c4be6ca5d35f06198.sample"
+
+[deps]
+
+source_file="res://sounds/ambient rumbling.wav"
+dest_files=["res://.godot/imported/ambient rumbling.wav-12c930111ffda81c4be6ca5d35f06198.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=0

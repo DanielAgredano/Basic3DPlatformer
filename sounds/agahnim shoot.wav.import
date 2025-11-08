@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://nf7nrm2fwb1v"
+path="res://.godot/imported/agahnim shoot.wav-f7bf209d38e4b95aa62b85fc8fa38d6a.sample"
+
+[deps]
+
+source_file="res://sounds/agahnim shoot.wav"
+dest_files=["res://.godot/imported/agahnim shoot.wav-f7bf209d38e4b95aa62b85fc8fa38d6a.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=0

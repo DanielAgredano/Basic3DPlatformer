@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://c6g7lkhhkt3fq"
+path="res://.godot/imported/heart piece 1.wav-e0a6e5970efe384b2e236a4e46ee3928.sample"
+
+[deps]
+
+source_file="res://sounds/heart piece 1.wav"
+dest_files=["res://.godot/imported/heart piece 1.wav-e0a6e5970efe384b2e236a4e46ee3928.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=0

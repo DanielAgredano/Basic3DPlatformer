@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://dwbnu0x7yaxhi"
+path="res://.godot/imported/fighter sword 1.wav-1174c7f296b939afc88c3f21852ca51f.sample"
+
+[deps]
+
+source_file="res://sounds/fighter sword 1.wav"
+dest_files=["res://.godot/imported/fighter sword 1.wav-1174c7f296b939afc88c3f21852ca51f.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=0

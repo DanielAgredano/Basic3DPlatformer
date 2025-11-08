@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://b0oo3fj2u5vct"
+path="res://.godot/imported/bombable wall.wav-31027282106d2f4f87f5df1020f4dae7.sample"
+
+[deps]
+
+source_file="res://sounds/bombable wall.wav"
+dest_files=["res://.godot/imported/bombable wall.wav-31027282106d2f4f87f5df1020f4dae7.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=0

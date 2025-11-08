@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://b3bxje87mhm48"
+path="res://.godot/imported/spin energy.wav-6c34b2bed19f0b5d0720e0bb3f106a3a.sample"
+
+[deps]
+
+source_file="res://sounds/spin energy.wav"
+dest_files=["res://.godot/imported/spin energy.wav-6c34b2bed19f0b5d0720e0bb3f106a3a.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=0

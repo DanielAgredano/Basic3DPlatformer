@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://cbtuebwb0ev7o"
+path="res://.godot/imported/fall in water.wav-efce39a0b6e5dac2811c088e2a4cdf98.sample"
+
+[deps]
+
+source_file="res://sounds/fall in water.wav"
+dest_files=["res://.godot/imported/fall in water.wav-efce39a0b6e5dac2811c088e2a4cdf98.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=0
