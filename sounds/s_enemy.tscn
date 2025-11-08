@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://dm37jagxu5ce0"]
+
+[ext_resource type="Script" path="res://Enemies/S_Enemy.gd" id="1_4bp0d"]
+
+[node name="S_Enemy" type="AudioStreamPlayer"]
+script = ExtResource("1_4bp0d")

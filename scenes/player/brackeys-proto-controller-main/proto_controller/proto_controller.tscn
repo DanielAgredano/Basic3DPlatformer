@@ -1,14 +1,13 @@
-[gd_scene load_steps=7 format=3 uid="uid://bs72ogkvdd7d6"]
+[gd_scene load_steps=23 format=3 uid="uid://bs72ogkvdd7d6"]
 
 [ext_resource type="Script" uid="uid://d3f53xkbhjw5" path="res://scenes/player/brackeys-proto-controller-main/proto_controller/proto_controller.gd" id="1_ucva2"]
 [ext_resource type="PackedScene" uid="uid://c5tdhx70wpesv" path="res://models/fox/fox.glb" id="2_8lji6"]
-
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_iof21"]
-albedo_color = Color(0.91806, 0.575202, 0.222449, 1)
-
-[sub_resource type="CapsuleMesh" id="CapsuleMesh_ucva2"]
-radius = 0.4
-height = 1.8
+[ext_resource type="AudioStream" uid="uid://dwbnu0x7yaxhi" path="res://sounds/fighter sword 1.wav" id="3_wll5h"]
+[ext_resource type="AudioStream" uid="uid://cgvt1tx1vw2qv" path="res://sounds/lift.wav" id="4_rwcd3"]
+[ext_resource type="AudioStream" uid="uid://boh48s5lwayi8" path="res://sounds/walk grass.wav" id="5_q34sf"]
+[ext_resource type="AudioStream" uid="uid://svk7kjwvhrwd" path="res://sounds/link hurt.wav" id="6_qpo6v"]
+[ext_resource type="AudioStream" uid="uid://cyg2cd0kkfjyd" path="res://sounds/rupee.wav" id="7_3wpj4"]
+[ext_resource type="AudioStream" uid="uid://bwfq3tr1cmll4" path="res://sounds/link dies.wav" id="8_3unoh"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_iof21"]
 radius = 0.4
@@ -18,16 +17,173 @@ height = 1.4
 radius = 0.6
 height = 1.5488281
 
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_wll5h"]
+radius = 0.3
+height = 1.137207
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_8lji6"]
+radius = 0.3
+height = 0.95
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_8lji6"]
+transparency = 1
+albedo_color = Color(0.53, 0.11660001, 0.13037999, 0.20392157)
+
+[sub_resource type="CapsuleMesh" id="CapsuleMesh_wll5h"]
+material = SubResource("StandardMaterial3D_8lji6")
+radius = 0.3
+height = 0.95
+
+[sub_resource type="SphereMesh" id="SphereMesh_8lji6"]
+resource_local_to_scene = false
+resource_name = ""
+lightmap_size_hint = Vector2i(0, 0)
+custom_aabb = AABB(0, 0, 0, 0, 0, 0)
+flip_faces = false
+add_uv2 = false
+uv2_padding = 2.0
+radius = 0.5
+height = 1.0
+radial_segments = 64
+rings = 32
+is_hemisphere = false
+
+[sub_resource type="Curve" id="Curve_wll5h"]
+_data = [Vector2(0, 1), 0.0, 0.055388734, 0, 0, Vector2(0.5137931, 0.7891396), -0.8622726, -0.8622726, 0, 0, Vector2(1, 0), -2.2240813, 0.0, 0, 0]
+point_count = 3
+
+[sub_resource type="Animation" id="Animation_8lji6"]
+resource_name = "death"
+step = 0.1
+tracks/0/type = "position_3d"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("fox")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = PackedFloat32Array(0, 1, 0, 0.1, 0, 0.39999998, 1, 0, 2, 0)
+tracks/1/type = "rotation_3d"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("fox")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = PackedFloat32Array(0, 1, 0, 1, 0, 4.3711385e-08, 0.19999999, 1, 0, -1.19209275e-07, 0, 1, 0.4, 1, 0, 0.9961947, 0, 0.0871558)
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("fox:visible")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 0.4),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [true, false]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Smoke:emitting")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0.4),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+
+[sub_resource type="Animation" id="Animation_wll5h"]
+length = 0.001
+tracks/0/type = "position_3d"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("fox")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = PackedFloat32Array(0, 1, 0, 0.1, 0)
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("fox:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Smoke:emitting")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+
+[sub_resource type="Animation" id="Animation_rwcd3"]
+resource_name = "damage"
+length = 0.9
+step = 0.1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("fox:visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.15, 0.3, 0.45, 0.6, 0.75, 0.90000004),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [true, false, true, false, true, false, true]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_rwcd3"]
+_data = {
+&"RESET": SubResource("Animation_wll5h"),
+&"damage": SubResource("Animation_rwcd3"),
+&"death": SubResource("Animation_8lji6")
+}
+
+[sub_resource type="Animation" id="Animation_qpo6v"]
+resource_name = "play"
+length = 0.3365
+loop_mode = 1
+tracks/0/type = "audio"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"clips": [{
+"end_offset": 0.0,
+"start_offset": 0.0,
+"stream": ExtResource("5_q34sf")
+}],
+"times": PackedFloat32Array(0)
+}
+tracks/0/use_blend = true
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_3wpj4"]
+_data = {
+&"play": SubResource("Animation_qpo6v")
+}
+
 [node name="ProtoController" type="CharacterBody3D"]
 transform = Transform3D(0.99999994, 0, 0, 0, 1, 0, 0, 0, 0.99999994, 0, 0, 0)
+collision_layer = 0
 script = ExtResource("1_ucva2")
 
-[node name="Mesh" type="MeshInstance3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.9, 0)
-visible = false
-material_override = SubResource("StandardMaterial3D_iof21")
-cast_shadow = 0
-mesh = SubResource("CapsuleMesh_ucva2")
+[node name="AudioListener3D" type="AudioListener3D" parent="."]
+transform = Transform3D(0.99999994, 0, 0, 0, 1, 0, 0, 0, 0.99999994, 0, 0.6, 0)
 
 [node name="Collider" type="CollisionShape3D" parent="."]
 transform = Transform3D(1, 0, -5.9604645e-08, 0, 1, 0, 5.9604645e-08, 0, 1, 0, 0.7, 0)
@@ -46,51 +202,117 @@ collision_mask = 0
 transform = Transform3D(1, 0, -5.9604645e-08, 0, 1, 0, 5.9604645e-08, 0, 1, 0, 0.6986325, 0)
 shape = SubResource("CapsuleShape3D_1ykab")
 
+[node name="Hurtbox" type="Area3D" parent="."]
+collision_layer = 0
+collision_mask = 32
+
+[node name="Shape" type="CollisionShape3D" parent="Hurtbox"]
+transform = Transform3D(1, 0, -5.9604645e-08, 0, 1, 0, 5.9604645e-08, 0, 1, 0, 0.6928219, 0)
+shape = SubResource("CapsuleShape3D_wll5h")
+debug_color = Color(0.90042585, 0.18921521, 0, 0.41960785)
+
 [node name="fox" parent="." instance=ExtResource("2_8lji6")]
-transform = Transform3D(-0.9848077, 0, -0.17364809, 0, 1, 0, 0.17364809, 0, -0.9848077, 0, 0.1, 0)
+transform = Transform3D(-0.99999994, 0, 1.5099579e-07, 0, 1, 0, -1.5099579e-07, 0, -0.99999994, 0, 0.1, 0)
 
 [node name="Skeleton3D" parent="fox/IdleDemo" index="0"]
-bones/0/position = Vector3(0.10307393, 0.20969293, 0.03465251)
-bones/0/rotation = Quaternion(0, 0.5601904, 0.828364, 0)
-bones/1/position = Vector3(1.2216565e-06, -9.812995e-06, 5.823445e-05)
-bones/4/position = Vector3(1.8517199e-09, 0.41835964, 1.1740602e-05)
-bones/4/rotation = Quaternion(-0.067384414, 0.0009919773, -0.0013182228, 0.9977258)
-bones/5/rotation = Quaternion(0.013479795, 0.0019131189, 0.047693945, 0.9987692)
-bones/5/scale = Vector3(1.0000001, 0.8853208, 1)
-bones/6/rotation = Quaternion(-0.67275953, 1.2755567e-09, -7.2985573e-10, 0.7398613)
-bones/8/rotation = Quaternion(-0.52579737, -0.3775864, -0.26335695, 0.7152683)
-bones/9/rotation = Quaternion(-1.639669e-06, -2.2385467e-07, -0.5876602, 0.80910784)
-bones/10/rotation = Quaternion(0.66920257, 0.040716916, 0.3216831, 0.6686031)
-bones/11/position = Vector3(0.3500534, 0.007650681, 0.13360007)
-bones/11/rotation = Quaternion(-0.65794003, -0.0016335445, 0.00023069808, 0.7530686)
-bones/12/position = Vector3(0.33296734, 0.021214351, -0.060704708)
-bones/12/rotation = Quaternion(-0.65793985, -0.001633543, 0.00023069808, 0.7530687)
-bones/14/rotation = Quaternion(-0.5141785, 0.1021801, 0.1969402, 0.82848907)
-bones/15/rotation = Quaternion(-1.8268383e-06, 2.1249875e-07, 0.46371105, 0.88598645)
-bones/16/position = Vector3(-0.39116055, -0.038288563, -0.046064243)
-bones/16/rotation = Quaternion(-0.65794003, -0.0016335445, 0.00023069808, 0.7530686)
-bones/17/rotation = Quaternion(-0.65794003, -0.0016335445, 0.00023069808, 0.7530686)
-bones/18/rotation = Quaternion(-0.6855943, 0.0010785919, 0.002914475, 0.72797716)
-bones/19/rotation = Quaternion(0.21387893, 1.2152277e-15, 1.4169772e-10, 0.9768602)
-bones/20/rotation = Quaternion(0.20106992, -1.644476e-10, 2.569495e-10, 0.97957695)
-bones/21/rotation = Quaternion(-0.03562235, 6.112495e-11, -1.9213296e-10, 0.9993654)
-bones/22/position = Vector3(3.5643049e-09, -0.021669155, -0.0029410196)
-bones/22/rotation = Quaternion(0.9977339, 0.0013182117, 0.0009919807, -0.06726388)
-bones/22/scale = Vector3(0.932483, 0.9324878, 0.9321496)
-bones/23/rotation = Quaternion(-0.76593024, 0.0153105855, -0.017180687, 0.6425118)
-bones/23/scale = Vector3(1.0000002, 1.000052, 0.99990517)
-bones/24/rotation = Quaternion(0.8802173, 2.1128766e-08, -3.640487e-07, 0.47457078)
-bones/24/scale = Vector3(1, 1.0000433, 0.99994296)
-bones/25/rotation = Quaternion(0.017168568, -0.010251725, 0.009293938, 0.99975693)
-bones/25/scale = Vector3(1.0000001, 1.000176, 0.9998745)
-bones/26/rotation = Quaternion(0.5864199, -3.9911246e-08, 2.3922385e-07, 0.8100072)
-bones/26/scale = Vector3(0.99999994, 1.0002605, 0.99968785)
-bones/27/position = Vector3(-0.10307393, 0.18250461, -0.19291165)
-bones/27/rotation = Quaternion(0, 0.084820606, 0.9963963, 0)
-bones/28/position = Vector3(-1.2420317e-06, -2.0396565e-05, 2.442689e-05)
+bones/0/rotation = Quaternion(0, 0.7071068, 0.7071068, 0)
+bones/1/position = Vector3(7.450581e-09, 2.1867454e-06, -3.1143427e-06)
+bones/4/rotation = Quaternion(0.007123315, 0.085773274, 0.07063676, 0.99378204)
+bones/5/rotation = Quaternion(-0.013268068, -1.7495209e-08, -8.688862e-09, 0.99991196)
+bones/6/rotation = Quaternion(-0.5723868, 1.0661542e-09, 1.527338e-09, 0.8199838)
+bones/8/rotation = Quaternion(-0.27509037, -0.63369185, 0.061459497, 0.7204046)
+bones/9/rotation = Quaternion(-8.779634e-07, -2.5232552e-07, -0.32640642, 0.94522953)
+bones/10/rotation = Quaternion(0.53337073, -0.15333194, 0.16641206, 0.81505346)
+bones/11/position = Vector3(0.4292498, 0.27025193, -0.0071732793)
+bones/11/rotation = Quaternion(-0.707747, -0.010703132, -0.11059861, 0.697673)
+bones/12/position = Vector3(0.28773803, 0.12042712, -0.20326693)
+bones/12/rotation = Quaternion(-0.707747, -0.010703132, -0.11059861, 0.697673)
+bones/14/rotation = Quaternion(-0.336275, 0.49857578, 0.1869373, 0.77678555)
+bones/15/rotation = Quaternion(-2.31646e-07, 2.4785828e-07, 0.05866493, 0.9982777)
+bones/16/position = Vector3(-0.4806195, 0.12573394, -0.0033373705)
+bones/16/rotation = Quaternion(-0.707747, -0.010703132, -0.11059861, 0.697673)
+bones/17/position = Vector3(-0.28773805, 0.12042716, -0.20326692)
+bones/17/rotation = Quaternion(-0.707747, -0.010703132, -0.11059861, 0.697673)
+bones/18/rotation = Quaternion(-0.71642643, 5.0494497e-09, -1.7933441e-08, 0.69766265)
+bones/19/rotation = Quaternion(6.5192616e-09, 4.0659784e-16, -6.402803e-10, 1)
+bones/20/rotation = Quaternion(-2.2204463e-16, -1.0937493e-22, -6.4028416e-10, 1)
+bones/21/rotation = Quaternion(2.4777441e-31, -9.595295e-23, -6.4028405e-10, 1)
+bones/22/position = Vector3(-4.308515e-09, 2.879895e-08, 1.8211811e-09)
+bones/22/rotation = Quaternion(0.993782, -0.07063718, 0.085773, 0.0071255607)
+bones/22/scale = Vector3(1.00001, 0.99999994, 0.9996427)
+bones/23/rotation = Quaternion(-0.06727828, -8.127305e-09, 3.2239733e-08, 0.99773425)
+bones/23/scale = Vector3(1, 1.0000027, 0.9999975)
+bones/24/rotation = Quaternion(0.11926959, 4.8082956e-08, -4.883523e-08, 0.9928619)
+bones/24/scale = Vector3(1, 0.99995387, 1.0000471)
+bones/25/rotation = Quaternion(-0.06727828, -3.5910233e-08, -3.560362e-08, 0.99773425)
+bones/25/scale = Vector3(1, 1.0000027, 0.9999975)
+bones/26/rotation = Quaternion(0.11926959, -4.8082956e-08, 4.8835208e-08, 0.9928619)
+bones/26/scale = Vector3(1, 0.99995387, 1.0000471)
+bones/27/rotation = Quaternion(0, 0.7071068, 0.7071068, 0)
+bones/28/position = Vector3(-7.450581e-09, 2.1848828e-06, -3.1143427e-06)
 
 [node name="AnimationPlayer" parent="fox" index="2"]
 autoplay = "Idle"
 next/Jump = &"Fall"
+
+[node name="Hit" type="Area3D" parent="."]
+collision_layer = 64
+collision_mask = 0
+
+[node name="Shape" type="CollisionShape3D" parent="Hit"]
+transform = Transform3D(-4.371139e-08, -1, 0, 1, -4.371139e-08, 0, 0, 0, 1, 0.024998916, 0.70000005, -0.8000016)
+shape = SubResource("CapsuleShape3D_8lji6")
+debug_color = Color(0.9784439, 0, 0.3999081, 0.41960785)
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Hit"]
+transform = Transform3D(-4.371139e-08, -1, 0, 1, -4.371139e-08, 0, 0, 0, 1, 0.024998916, 0.70000005, -0.60000163)
+visible = false
+mesh = SubResource("CapsuleMesh_wll5h")
+
+[node name="Smoke" type="CPUParticles3D" parent="."]
+transform = Transform3D(0.59999996, 0, 0, 0, 0.6, 1.4305115e-07, 0, -1.4305114e-07, 0.59999996, 0, 2.73, -4.7683716e-07)
+emitting = false
+amount = 16
+lifetime = 0.39
+one_shot = true
+mesh = SubResource("SphereMesh_8lji6")
+spread = 180.0
+gravity = Vector3(0, 0, 0)
+initial_velocity_min = 4.0
+initial_velocity_max = 4.0
+scale_amount_curve = SubResource("Curve_wll5h")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+&"": SubResource("AnimationLibrary_rwcd3")
+}
+
+[node name="Sounds" type="Node3D" parent="."]
+
+[node name="Slash" type="AudioStreamPlayer3D" parent="Sounds"]
+stream = ExtResource("3_wll5h")
+
+[node name="Jump" type="AudioStreamPlayer3D" parent="Sounds"]
+stream = ExtResource("4_rwcd3")
+pitch_scale = 1.5
+
+[node name="Walk" type="AudioStreamPlayer3D" parent="Sounds"]
+pitch_scale = 1.5
+
+[node name="AnimP" type="AnimationPlayer" parent="Sounds/Walk"]
+libraries = {
+&"": SubResource("AnimationLibrary_3wpj4")
+}
+
+[node name="Hurt" type="AudioStreamPlayer3D" parent="Sounds"]
+stream = ExtResource("6_qpo6v")
+
+[node name="Coin" type="AudioStreamPlayer3D" parent="Sounds"]
+stream = ExtResource("7_3wpj4")
+
+[node name="Death" type="AudioStreamPlayer3D" parent="Sounds"]
+stream = ExtResource("8_3unoh")
+
+[connection signal="area_entered" from="Hurtbox" to="." method="areaHurt"]
 
 [editable path="fox"]

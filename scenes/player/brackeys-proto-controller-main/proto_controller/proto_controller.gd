@@ -44,10 +44,11 @@ extends CharacterBody3D
 ## Name of Input Action to toggle freefly mode.
 @export var input_freefly : String = "freefly"
 
-var mouse_captured : bool = false
+var mouse_captured : bool = true
 var look_rotation : Vector2
 var move_speed : float = 0.0
 var freeflying : bool = false
+var hp = 6
 
 ## IMPORTANT REFERENCES
 @onready var head: Node3D = $Head
@@ -55,6 +56,7 @@ var freeflying : bool = false
 @onready var anim: AnimationPlayer = $fox/AnimationPlayer
 
 func _ready() -> void:
+	Game.player = $"."
 	capture_mouse()
 	check_input_mappings()
 	look_rotation.y = rotation.y
@@ -62,10 +64,12 @@ func _ready() -> void:
 
 func _unhandled_input(event: InputEvent) -> void:
 	# Mouse capturing
-	if Input.is_mouse_button_pressed(MOUSE_BUTTON_LEFT):
+	if Input.is_action_just_pressed("Attack"):
 		capture_mouse()
-	if Input.is_key_pressed(KEY_ESCAPE):
-		release_mouse()
+	if Input.is_action_just_pressed("Attack"):
+		if anim.current_animation != "Attack":
+			$Sounds/Slash.play()
+		anim.play("Attack")
 	
 	# Look around
 	if mouse_captured and event is InputEventMouseMotion:
@@ -79,6 +83,7 @@ func _unhandled_input(event: InputEvent) -> void:
 			disable_freefly()
 
 func _physics_process(delta: float) -> void:
+	if hp <= 0: return
 	# If freeflying, handle freefly and nothing else
 	if can_freefly and freeflying:
 		var input_dir := Input.get_vector(input_left, input_right, input_forward, input_back)
@@ -97,6 +102,7 @@ func _physics_process(delta: float) -> void:
 		if Input.is_action_just_pressed(input_jump) and is_on_floor():
 			velocity.y = jump_velocity
 			anim.play("Jump")
+			$Sounds/Jump.play()
 	
 	# Modify speed based on sprinting
 	if can_sprint and Input.is_action_pressed(input_sprint):
@@ -114,22 +120,48 @@ func _physics_process(delta: float) -> void:
 			velocity.x = move_dir.x * move_speed
 			velocity.z = move_dir.z * move_speed
 			$fox.rotation.y = (input_dir*Vector2(-1, 1)).angle()-PI/2
-			if is_on_floor() and velocity.y <= 0.0: anim.play("Run")
-			if not is_on_floor() and anim.current_animation != "Jump": anim.play("Fall")
+			$Hit.rotation.y = $fox.rotation.y+PI
+			if is_on_floor() and velocity.y <= 0.0:
+				anim.play("Run")
+				if not $Sounds/Walk.playing:
+					$Sounds/Walk/AnimP.play("play")
+			if not is_on_floor():
+				$Sounds/Walk/AnimP.stop()
+			if not is_on_floor() and anim.current_animation not in ["Jump","Attack"]:
+				anim.play("Fall")
 		else:
 			velocity.x = move_toward(velocity.x, 0, move_speed)
 			velocity.z = move_toward(velocity.z, 0, move_speed)
-			if is_on_floor() and velocity.y <= 0.0: anim.play("Idle")
+			if is_on_floor() and velocity.y <= 0.0 and anim.current_animation != "Attack": anim.play("Idle")
+			$Sounds/Walk/AnimP.stop()
 	else:
 		velocity.x = 0
 		velocity.y = 0
 	
-	#if not is_on_floor() and anim.animation_finished:
-		#anim.play("Jump")
-	
-	# Use velocity to actually move
+	checkHit()
+	#print($Hit/Shape.disabled)
 	move_and_slide()
 
+func checkHit():
+	var atkAnim = anim.current_animation == "Attack"
+	var hitDisabled = $Hit/Shape.disabled
+	if atkAnim == hitDisabled:
+		$Hit/Shape.call_deferred("set_disabled",not atkAnim)
+
+func hurt(dmg = 1):
+	if hp <= 0: return
+	if $AnimationPlayer.current_animation == "damage": return
+	hp -= dmg
+	get_tree().call_group("heartUI","update",hp)
+	$AnimationPlayer.play("damage")
+	$Sounds/Hurt.play()
+	if hp <= 0:
+		$AnimationPlayer.play("death")
+		$Sounds/Death.play()
+		get_tree().call_group("gameOverUI","play","gameOver")
+		
+func coinSound():
+	$Sounds/Coin.play()
 
 ## Rotate us to look around.
 ## Base of controller rotates around y (left/right). Head rotates around x (up/down).
@@ -191,3 +223,7 @@ func check_input_mappings():
 	if can_freefly and not InputMap.has_action(input_freefly):
 		push_error("Freefly disabled. No InputAction found for input_freefly: " + input_freefly)
 		can_freefly = false
+
+
+func areaHurt(_area: Area3D) -> void:
+	hurt()
