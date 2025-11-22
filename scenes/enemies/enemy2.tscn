@@ -1,0 +1,228 @@
+[gd_scene load_steps=15 format=3 uid="uid://c64jrjk8uvlfg"]
+
+[ext_resource type="PackedScene" uid="uid://carcdaed2vyxn" path="res://models/slime/scene.gltf" id="1_g6p5h"]
+[ext_resource type="Script" uid="uid://dxmk1b33xtv6n" path="res://scenes/enemies/enemy2.gd" id="1_w6keq"]
+[ext_resource type="AudioStream" uid="uid://d0vka51evvgf8" path="res://sounds/enemy dies.wav" id="3_e2a2s"]
+[ext_resource type="AudioStream" uid="uid://benauimhn2irl" path="res://sounds/enemy hit.wav" id="4_eqf6y"]
+
+[sub_resource type="CylinderShape3D" id="CylinderShape3D_w6keq"]
+height = 0.95
+radius = 0.55
+
+[sub_resource type="CylinderShape3D" id="CylinderShape3D_e2a2s"]
+height = 0.45
+radius = 0.35
+
+[sub_resource type="CylinderShape3D" id="CylinderShape3D_g6p5h"]
+height = 2.0500002
+radius = 5.0
+
+[sub_resource type="CylinderShape3D" id="CylinderShape3D_8t2vn"]
+height = 0.45
+radius = 0.45000002
+
+[sub_resource type="Animation" id="Animation_g6p5h"]
+resource_name = "Bob"
+loop_mode = 1
+step = 0.05
+tracks/0/type = "scale_3d"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("M_body")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = PackedFloat32Array(0, 1, 0.353, 0.353, 0.353, 0.25, 1, 0.353, 0.226, 0.353, 0.5, 1, 0.353, 0.353, 0.353, 0.75, 1, 0.353, 0.477, 0.353, 1, 1, 0.353, 0.353, 0.353)
+tracks/1/type = "position_3d"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("M_body")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = PackedFloat32Array(0, 1, 0, 0.096, 0, 0.25, 1, 0, 0.065, 0, 0.5, 1, 0, 0.096, 0, 0.75, 1, 0, 0.117, 0, 1, 1, 0, 0.096, 0)
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = false
+tracks/2/path = NodePath("M_body:position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(0, 0.096, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_w6keq"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("M_body:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(0, 0.096, 0)]
+}
+tracks/1/type = "position_3d"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("M_body")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = PackedFloat32Array(0, 1, 0, 0.096, 0)
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Smoke:emitting")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+
+[sub_resource type="Animation" id="Animation_8t2vn"]
+resource_name = "Death"
+step = 0.05
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Smoke:emitting")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/1/type = "scale_3d"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("M_body")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = PackedFloat32Array(0, 1, 0.353, 0.353, 0.353, 0.2, 1, 0, 0, 0)
+tracks/2/type = "method"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath(".")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(1),
+"transitions": PackedFloat32Array(1),
+"values": [{
+"args": [],
+"method": &"queue_free"
+}]
+}
+tracks/3/type = "audio"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Sounds/Death")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"clips": [{
+"end_offset": 0.0,
+"start_offset": 0.0,
+"stream": ExtResource("3_e2a2s")
+}],
+"times": PackedFloat32Array(0)
+}
+tracks/3/use_blend = true
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_w6keq"]
+_data = {
+&"Bob": SubResource("Animation_g6p5h"),
+&"Death": SubResource("Animation_8t2vn"),
+&"RESET": SubResource("Animation_w6keq")
+}
+
+[sub_resource type="SphereMesh" id="SphereMesh_w6keq"]
+
+[sub_resource type="Curve" id="Curve_8t2vn"]
+_data = [Vector2(0, 1), 0.0, 0.055388734, 0, 0, Vector2(0.5137931, 0.7891396), -0.8622726, -0.8622726, 0, 0, Vector2(1, 0), -2.2240813, 0.0, 0, 0]
+point_count = 3
+
+[node name="Slime" type="CharacterBody3D"]
+collision_layer = 0
+script = ExtResource("1_w6keq")
+
+[node name="M_body" parent="." instance=ExtResource("1_g6p5h")]
+transform = Transform3D(0.353, 0, 0, 0, 0.353, 0, 0, 0, 0.353, 0, 0.096, 0)
+
+[node name="Hitbox" type="Area3D" parent="."]
+collision_layer = 0
+collision_mask = 64
+
+[node name="Shape" type="CollisionShape3D" parent="Hitbox"]
+transform = Transform3D(1, 0, -5.9604645e-08, 0, 1, 0, 5.9604645e-08, 0, 1, 0, 0.5236324, 0)
+shape = SubResource("CylinderShape3D_w6keq")
+debug_color = Color(0.7, 0, 0, 0.41960785)
+
+[node name="Hurtbox" type="Area3D" parent="."]
+collision_layer = 32
+collision_mask = 0
+
+[node name="Shape" type="CollisionShape3D" parent="Hurtbox"]
+transform = Transform3D(1, 0, -5.9604645e-08, 0, 1, 0, 5.9604645e-08, 0, 1, 0, 0.23642544, 0)
+shape = SubResource("CylinderShape3D_e2a2s")
+debug_color = Color(0.835177, 0.3890101, 0, 0.41960785)
+
+[node name="Range" type="Area3D" parent="."]
+collision_layer = 0
+collision_mask = 2
+
+[node name="Shape" type="CollisionShape3D" parent="Range"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.025, 0)
+shape = SubResource("CylinderShape3D_g6p5h")
+debug_color = Color(0.41219303, 0.6063095, 0, 0.41960785)
+
+[node name="Shape" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, -5.9604645e-08, 0, 1, 0, 5.9604645e-08, 0, 1, 0, 0.23642544, 0)
+shape = SubResource("CylinderShape3D_8t2vn")
+
+[node name="AP" type="AnimationPlayer" parent="."]
+libraries = {
+&"": SubResource("AnimationLibrary_w6keq")
+}
+autoplay = "Bob"
+
+[node name="Smoke" type="CPUParticles3D" parent="."]
+transform = Transform3D(0.6, 0, 0, 0, 0.6, 1.4305115e-07, 0, -1.4305115e-07, 0.6, 0, 0.27, -6.437302e-08)
+emitting = false
+amount = 16
+lifetime = 0.39
+one_shot = true
+mesh = SubResource("SphereMesh_w6keq")
+spread = 180.0
+gravity = Vector3(0, 0, 0)
+initial_velocity_min = 4.0
+initial_velocity_max = 4.0
+scale_amount_curve = SubResource("Curve_8t2vn")
+
+[node name="Sounds" type="Node3D" parent="."]
+
+[node name="Shoot" type="AudioStreamPlayer3D" parent="Sounds"]
+max_distance = 22.0
+
+[node name="Charge" type="AudioStreamPlayer3D" parent="Sounds"]
+max_distance = 22.0
+
+[node name="Hurt" type="AudioStreamPlayer3D" parent="Sounds"]
+stream = ExtResource("4_eqf6y")
+
+[node name="Death" type="AudioStreamPlayer3D" parent="Sounds"]
+
+[node name="T_CD" type="Timer" parent="."]
+wait_time = 2.0
+one_shot = true
+
+[connection signal="area_entered" from="Hitbox" to="." method="hit"]

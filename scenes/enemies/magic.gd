@@ -13,3 +13,6 @@ func _process(_delta: float) -> void:
 
 func finish() -> void:
 	$AnimationPlayer.play("Disappear")
+
+func entered(_area) -> void:
+	$AnimationPlayer.play("Disappear")

@@ -49,6 +49,7 @@ var look_rotation : Vector2
 var move_speed : float = 0.0
 var freeflying : bool = false
 var hp = 6
+var cleared = false
 
 ## IMPORTANT REFERENCES
 @onready var head: Node3D = $Head
@@ -84,6 +85,7 @@ func _unhandled_input(event: InputEvent) -> void:
 
 func _physics_process(delta: float) -> void:
 	if hp <= 0: return
+	if cleared: return
 	# If freeflying, handle freefly and nothing else
 	if can_freefly and freeflying:
 		var input_dir := Input.get_vector(input_left, input_right, input_forward, input_back)
@@ -159,7 +161,14 @@ func hurt(dmg = 1):
 		$AnimationPlayer.play("death")
 		$Sounds/Death.play()
 		get_tree().call_group("gameOverUI","play","gameOver")
-		
+
+func clear():
+	$AnimationPlayer.play("death")
+	get_tree().call_group("clearUI","play","gameOver")
+	
+	cleared = true
+	
+
 func coinSound():
 	$Sounds/Coin.play()
 

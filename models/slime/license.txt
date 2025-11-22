@@ -1,0 +1,11 @@
+Model Information:
+* title:	Yet another slime (and yet another green one)
+* source:	https://sketchfab.com/3d-models/yet-another-slime-and-yet-another-green-one-3219dc3e18ad4d699c710d49438ce877
+* author:	DevilBlackDeath (https://sketchfab.com/DevilBlackDeath)
+
+Model License:
+* license type:	CC-BY-NC-SA-4.0 (http://creativecommons.org/licenses/by-nc-sa/4.0/)
+* requirements:	Author must be credited. No commercial use. Modified versions must have the same license.
+
+If you use this 3D model in your project be sure to copy paste this credit wherever you share it:
+This work is based on "Yet another slime (and yet another green one)" (https://sketchfab.com/3d-models/yet-another-slime-and-yet-another-green-one-3219dc3e18ad4d699c710d49438ce877) by DevilBlackDeath (https://sketchfab.com/DevilBlackDeath) licensed under CC-BY-NC-SA-4.0 (http://creativecommons.org/licenses/by-nc-sa/4.0/)

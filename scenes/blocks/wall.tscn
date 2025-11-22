@@ -1,0 +1,17 @@
+[gd_scene load_steps=3 format=3 uid="uid://d1evm7kp0h3y1"]
+
+[ext_resource type="PackedScene" uid="uid://ck7v1hi47xnn4" path="res://models/KayKit_BlockBits_1.0_FREE/Assets/gltf/stone.gltf" id="1_pu68m"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_1kl4p"]
+size = Vector3(3, 7, 1)
+
+[node name="Wall" type="Node3D"]
+
+[node name="stone3" parent="." instance=ExtResource("1_pu68m")]
+transform = Transform3D(3, 0, 0, 0, 3, 0, 0, 0, 1, 0, 0, 0)
+
+[node name="StaticBody3D" type="StaticBody3D" parent="."]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, 0)
+shape = SubResource("BoxShape3D_1kl4p")

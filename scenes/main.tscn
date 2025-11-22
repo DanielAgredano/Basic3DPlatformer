@@ -1,21 +1,13 @@
-[gd_scene load_steps=38 format=3 uid="uid://doni7frp3pluo"]
+[gd_scene load_steps=25 format=3 uid="uid://doni7frp3pluo"]
 
 [ext_resource type="PackedScene" uid="uid://bs72ogkvdd7d6" path="res://scenes/player/brackeys-proto-controller-main/proto_controller/proto_controller.tscn" id="1_0wfyh"]
 [ext_resource type="Script" uid="uid://dpefjubcep07h" path="res://scenes/main.gd" id="1_choun"]
 [ext_resource type="AudioStream" uid="uid://bmg1r44436mow" path="res://music/Forest.wav" id="2_gqmmt"]
-[ext_resource type="PackedScene" uid="uid://dx5fmf7vtce2b" path="res://models/KayKit_BlockBits_1.0_FREE/Assets/gltf/dirt_with_grass.gltf" id="2_tbgi4"]
-[ext_resource type="PackedScene" uid="uid://wf5qhcr1s0a6" path="res://scenes/blocks/block.tscn" id="3_tefeu"]
-[ext_resource type="PackedScene" uid="uid://ryi0m3g0psug" path="res://models/KayKit_BlockBits_1.0_FREE/Assets/gltf/dirt.gltf" id="4_o6xl0"]
-[ext_resource type="PackedScene" uid="uid://cnbdgibwmhr8h" path="res://scenes/items/coin.tscn" id="5_tefeu"]
-[ext_resource type="PackedScene" uid="uid://crb4hos3ib515" path="res://models/KayKit_BlockBits_1.0_FREE/Assets/gltf/wood.gltf" id="6_tefeu"]
-[ext_resource type="Script" uid="uid://sk0fekcrc1x8" path="res://scripts/death_plane.gd" id="7_o6xl0"]
 [ext_resource type="Texture2D" uid="uid://ddtb46q6cysxo" path="res://scenes/items/Coin.png" id="8_tipki"]
 [ext_resource type="FontFile" uid="uid://kpbhjh720x8x" path="res://UNISPACE BD.TTF" id="9_85g3d"]
-[ext_resource type="PackedScene" uid="uid://ck7v1hi47xnn4" path="res://models/KayKit_BlockBits_1.0_FREE/Assets/gltf/stone.gltf" id="9_trceg"]
-[ext_resource type="PackedScene" uid="uid://c7awjv2qqy1ov" path="res://models/KayKit_BlockBits_1.0_FREE/Assets/gltf/glass.gltf" id="10_a8y0u"]
 [ext_resource type="Texture2D" uid="uid://dfydwak7cejmp" path="res://scenes/items/Time.png" id="11_ya4ey"]
+[ext_resource type="PackedScene" uid="uid://bh6i4uf2f6rcn" path="res://scenes/levels/Level[2].tscn" id="12_eb6dy"]
 [ext_resource type="Script" uid="uid://by3s0k8mdj7t7" path="res://scenes/hearts.gd" id="14_0ld40"]
-[ext_resource type="PackedScene" uid="uid://bs6u7yiwo2m8w" path="res://scenes/enemies/enemy.tscn" id="14_a8y0u"]
 [ext_resource type="Texture2D" uid="uid://ctutxodxjxj5m" path="res://scenes/items/Heart/L1,R1,C1,Background,visible,Normal,255.png" id="14_jbj1t"]
 [ext_resource type="Texture2D" uid="uid://wd2v0etmnqfi" path="res://scenes/items/Heart/L3,R1,C1,Background,visible,Normal,255.png" id="15_dp3eg"]
 [ext_resource type="Texture2D" uid="uid://d88ar4wr41h0" path="res://scenes/items/Heart/L6,R1,C1,Layer 2,visible,Normal,255.png" id="15_muem4"]
@@ -66,21 +58,6 @@ font_color = Color(0.91, 0.91, 0.91, 1)
 outline_size = 25
 outline_color = Color(0.060299985, 0.4464434, 0.67, 1)
 
-[sub_resource type="Animation" id="Animation_gqmmt"]
-resource_name = "fadeOut"
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath(".:color")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.4),
-"transitions": PackedFloat32Array(1, 1),
-"update": 0,
-"values": [Color(0, 0, 0, 1), Color(0, 0, 0, 0)]
-}
-
 [sub_resource type="Animation" id="Animation_yc10j"]
 length = 0.001
 tracks/0/type = "value"
@@ -96,6 +73,21 @@ tracks/0/keys = {
 "values": [Color(0, 0, 0, 0)]
 }
 
+[sub_resource type="Animation" id="Animation_gqmmt"]
+resource_name = "fadeOut"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:color")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.4),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(0, 0, 0, 1), Color(0, 0, 0, 0)]
+}
+
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_jscy8"]
 _data = {
 &"RESET": SubResource("Animation_yc10j"),
@@ -108,6 +100,45 @@ font_size = 106
 font_color = Color(0.91, 0.91, 0.91, 1)
 outline_size = 25
 outline_color = Color(0.67, 0.17207833, 0.060299985, 1)
+
+[sub_resource type="Animation" id="Animation_jscy8"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(-271.5, -800)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:rotation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("../../ColorRect:color")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(0, 0, 0, 0)]
+}
 
 [sub_resource type="Animation" id="Animation_0ld40"]
 resource_name = "gameOver"
@@ -178,84 +209,11 @@ tracks/4/keys = {
 }]
 }
 
-[sub_resource type="Animation" id="Animation_jscy8"]
-length = 0.001
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath(".:position")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Vector2(-271.5, -800)]
-}
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath(".:rotation")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [0.0]
-}
-tracks/2/type = "value"
-tracks/2/imported = false
-tracks/2/enabled = true
-tracks/2/path = NodePath("../../ColorRect:color")
-tracks/2/interp = 1
-tracks/2/loop_wrap = true
-tracks/2/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Color(0, 0, 0, 0)]
-}
-
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_gqmmt"]
 _data = {
 &"RESET": SubResource("Animation_jscy8"),
 &"gameOver": SubResource("Animation_0ld40")
 }
-
-[sub_resource type="BoxShape3D" id="BoxShape3D_trceg"]
-size = Vector3(3, 1, 3)
-
-[sub_resource type="Animation" id="Animation_a8y0u"]
-length = 0.001
-tracks/0/type = "position_3d"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath(".")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = PackedFloat32Array(0, 1, -22, 16.5, 0)
-
-[sub_resource type="Animation" id="Animation_trceg"]
-resource_name = "move"
-length = 5.0
-loop_mode = 2
-step = 0.05
-tracks/0/type = "position_3d"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath(".")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = PackedFloat32Array(1, 1, -22, 16.5, 0, 4, 1, -27, 16.5, 0)
-
-[sub_resource type="AnimationLibrary" id="AnimationLibrary_jkv2x"]
-_data = {
-&"RESET": SubResource("Animation_a8y0u"),
-&"move": SubResource("Animation_trceg")
-}
-
-[sub_resource type="WorldBoundaryShape3D" id="WorldBoundaryShape3D_tipki"]
 
 [node name="Main" type="Node3D"]
 process_mode = 3
@@ -274,7 +232,7 @@ autoplay = true
 
 [node name="Player" parent="." instance=ExtResource("1_0wfyh")]
 process_mode = 1
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.5, 0.5, 0.39999998)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 19.5, 0.5, 23.4)
 can_sprint = true
 jump_velocity = 20.0
 sprint_speed = 12.0
@@ -372,77 +330,13 @@ text = "Pause"
 label_settings = SubResource("LabelSettings_eb6dy")
 
 [node name="ColorRect" type="ColorRect" parent="CanvasLayer"]
-_import_path = NodePath("")
-unique_name_in_owner = false
-process_mode = 0
-process_priority = 0
-process_physics_priority = 0
-process_thread_group = 0
-physics_interpolation_mode = 2
-auto_translate_mode = 0
-editor_description = ""
-visible = true
-modulate = Color(1, 1, 1, 1)
-self_modulate = Color(1, 1, 1, 1)
-show_behind_parent = false
-top_level = false
-clip_children = 0
-light_mask = 1
-visibility_layer = 1
-z_index = 0
-z_as_relative = true
-y_sort_enabled = false
-texture_filter = 0
-texture_repeat = 0
-material = null
-use_parent_material = false
-clip_contents = false
-custom_minimum_size = Vector2(0, 0)
-layout_direction = 0
-layout_mode = 3
 anchors_preset = 15
-anchor_left = 0.0
-anchor_top = 0.0
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_left = 0.0
-offset_top = 0.0
-offset_right = 0.0
-offset_bottom = 0.0
 grow_horizontal = 2
 grow_vertical = 2
-rotation = 0.0
-scale = Vector2(1, 1)
-pivot_offset = Vector2(0, 0)
-size_flags_horizontal = 1
-size_flags_vertical = 1
-size_flags_stretch_ratio = 1.0
-localize_numeral_system = true
-tooltip_text = ""
-tooltip_auto_translate_mode = 0
-focus_neighbor_left = NodePath("")
-focus_neighbor_top = NodePath("")
-focus_neighbor_right = NodePath("")
-focus_neighbor_bottom = NodePath("")
-focus_next = NodePath("")
-focus_previous = NodePath("")
-focus_mode = 0
-focus_behavior_recursive = 0
 mouse_filter = 2
-mouse_behavior_recursive = 0
-mouse_force_pass_scroll_events = true
-mouse_default_cursor_shape = 0
-accessibility_name = ""
-accessibility_description = ""
-accessibility_live = 0
-accessibility_controls_nodes = Array[NodePath]([])
-accessibility_described_by_nodes = Array[NodePath]([])
-accessibility_labeled_by_nodes = Array[NodePath]([])
-accessibility_flow_to_nodes = Array[NodePath]([])
-theme = null
-theme_type_variation = &""
 color = Color(0, 0, 0, 0)
-script = null
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="CanvasLayer/ColorRect"]
 libraries = {
@@ -534,6 +428,7 @@ grow_vertical = 2
 pivot_offset = Vector2(291.5, 68)
 text = "Game Over"
 label_settings = SubResource("LabelSettings_eb6dy")
+horizontal_alignment = 1
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="CanvasLayer/Game Over" groups=["gameOverUI"]]
 root_node = NodePath("../Text")
@@ -541,1004 +436,49 @@ libraries = {
 &"": SubResource("AnimationLibrary_gqmmt")
 }
 
-[node name="T_Game" type="Timer" parent="."]
-_import_path = NodePath("")
-unique_name_in_owner = false
-process_mode = 1
-process_priority = 0
-process_physics_priority = 0
-process_thread_group = 0
-physics_interpolation_mode = 0
-auto_translate_mode = 0
-editor_description = ""
-process_callback = 1
-wait_time = 1.0
-one_shot = false
-autostart = true
-ignore_time_scale = false
-script = null
-
-[node name="Level[1]" type="Node3D" parent="."]
-process_mode = 1
-
-[node name="Coins" type="Node3D" parent="Level[1]"]
-
-[node name="Coin" parent="Level[1]/Coins" instance=ExtResource("5_tefeu")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.5, 4, -1.5)
-
-[node name="Coin2" parent="Level[1]/Coins" instance=ExtResource("5_tefeu")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.5, 5, -2.5)
-
-[node name="Coin3" parent="Level[1]/Coins" instance=ExtResource("5_tefeu")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.5, 7.5, -4.5)
-
-[node name="Coin4" parent="Level[1]/Coins" instance=ExtResource("5_tefeu")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.5, 8.5, -4.5)
-
-[node name="Coin5" parent="Level[1]/Coins" instance=ExtResource("5_tefeu")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.5, 8.5, -4.5)
-
-[node name="Coin6" parent="Level[1]/Coins" instance=ExtResource("5_tefeu")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.5, 3.5, -4.5)
-
-[node name="Coin7" parent="Level[1]/Coins" instance=ExtResource("5_tefeu")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.5, 3.5, -4.5)
-
-[node name="Coin8" parent="Level[1]/Coins" instance=ExtResource("5_tefeu")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.5, 3.5, -4.5)
-
-[node name="Coin9" parent="Level[1]/Coins" instance=ExtResource("5_tefeu")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.5, 3.5, -4.5)
-
-[node name="Coin10" parent="Level[1]/Coins" instance=ExtResource("5_tefeu")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.5, 4.5, -4.5)
-
-[node name="Coin11" parent="Level[1]/Coins" instance=ExtResource("5_tefeu")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.5, 5.5, -4.5)
-
-[node name="Coin12" parent="Level[1]/Coins" instance=ExtResource("5_tefeu")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.5, 6.5, -4.5)
-
-[node name="Coin13" parent="Level[1]/Coins" instance=ExtResource("5_tefeu")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -9.5, 7.5, -4.5)
-
-[node name="Coin14" parent="Level[1]/Coins" instance=ExtResource("5_tefeu")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -9.5, 8.5, -4.5)
-
-[node name="Coin15" parent="Level[1]/Coins" instance=ExtResource("5_tefeu")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -9.5, 9.5, -4.5)
-
-[node name="Coin16" parent="Level[1]/Coins" instance=ExtResource("5_tefeu")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -11.5, 11.5, -5.5)
-
-[node name="Coin17" parent="Level[1]/Coins" instance=ExtResource("5_tefeu")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -11.5, 12.5, -5.5)
-
-[node name="Coin18" parent="Level[1]/Coins" instance=ExtResource("5_tefeu")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -11.5, 13.5, -5.5)
-
-[node name="Coin19" parent="Level[1]/Coins" instance=ExtResource("5_tefeu")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -10.5, 15.5, -7.5)
-
-[node name="Coin20" parent="Level[1]/Coins" instance=ExtResource("5_tefeu")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -10.5, 16.5, -7.5)
-
-[node name="Coin21" parent="Level[1]/Coins" instance=ExtResource("5_tefeu")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -10.5, 17.5, -7.5)
-
-[node name="Coin22" parent="Level[1]/Coins" instance=ExtResource("5_tefeu")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8.5, 19.5, -6.5)
-
-[node name="Coin23" parent="Level[1]/Coins" instance=ExtResource("5_tefeu")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8.5, 20.5, -6.5)
-
-[node name="Coin24" parent="Level[1]/Coins" instance=ExtResource("5_tefeu")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8.5, 21.5, -6.5)
-
-[node name="Coin48" parent="Level[1]/Coins" instance=ExtResource("5_tefeu")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8.5, 21.5, -1.5)
-
-[node name="Coin49" parent="Level[1]/Coins" instance=ExtResource("5_tefeu")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8.5, 21.5, 0.5)
-
-[node name="Coin50" parent="Level[1]/Coins" instance=ExtResource("5_tefeu")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.5, 21.5, 0.5)
-
-[node name="Coin25" parent="Level[1]/Coins" instance=ExtResource("5_tefeu")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.5, 21.5, 0.5000001)
-
-[node name="Coin26" parent="Level[1]/Coins" instance=ExtResource("5_tefeu")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.5, 20.5, 0.5000001)
-
-[node name="Coin27" parent="Level[1]/Coins" instance=ExtResource("5_tefeu")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.5, 19.5, 0.5000001)
-
-[node name="Coin28" parent="Level[1]/Coins" instance=ExtResource("5_tefeu")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.5, 18.5, 0.5000001)
-
-[node name="Coin29" parent="Level[1]/Coins" instance=ExtResource("5_tefeu")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.5, 17.5, 0.5000001)
-
-[node name="Coin30" parent="Level[1]/Coins" instance=ExtResource("5_tefeu")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.5, 16.5, 0.5000001)
-
-[node name="Coin31" parent="Level[1]/Coins" instance=ExtResource("5_tefeu")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.5, 15.5, 0.5000001)
-
-[node name="Coin32" parent="Level[1]/Coins" instance=ExtResource("5_tefeu")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.5, 14.5, 0.5000001)
-
-[node name="Coin33" parent="Level[1]/Coins" instance=ExtResource("5_tefeu")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.5, 13.5, 0.5000001)
-
-[node name="Coin34" parent="Level[1]/Coins" instance=ExtResource("5_tefeu")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.5, 12.5, 0.5000001)
-
-[node name="Coin35" parent="Level[1]/Coins" instance=ExtResource("5_tefeu")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.5, 11.5, 0.5000001)
-
-[node name="Coin36" parent="Level[1]/Coins" instance=ExtResource("5_tefeu")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.5, 10.5, 0.5000001)
-
-[node name="Coin37" parent="Level[1]/Coins" instance=ExtResource("5_tefeu")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -13.5, 25.5, 0.5)
-
-[node name="Coin38" parent="Level[1]/Coins" instance=ExtResource("5_tefeu")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -15.5, 25.5, 0.5)
-
-[node name="Coin39" parent="Level[1]/Coins" instance=ExtResource("5_tefeu")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -17.5, 24.5, 0.5)
-
-[node name="Coin40" parent="Level[1]/Coins" instance=ExtResource("5_tefeu")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -25.5, 21.5, 0.5)
-
-[node name="Coin41" parent="Level[1]/Coins" instance=ExtResource("5_tefeu")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -27.5, 21.5, 0.5)
-
-[node name="Coin42" parent="Level[1]/Coins" instance=ExtResource("5_tefeu")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -29.5, 21.5, 0.5)
-
-[node name="Coin43" parent="Level[1]/Coins" instance=ExtResource("5_tefeu")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -32.5, 17.5, 0.5)
-
-[node name="Coin44" parent="Level[1]/Coins" instance=ExtResource("5_tefeu")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -31.5, 17.5, -0.5)
-
-[node name="Coin45" parent="Level[1]/Coins" instance=ExtResource("5_tefeu")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -31.5, 17.5, 1.5)
-
-[node name="Coin46" parent="Level[1]/Coins" instance=ExtResource("5_tefeu")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -33.5, 17.5, 1.5)
-
-[node name="Coin47" parent="Level[1]/Coins" instance=ExtResource("5_tefeu")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -33.5, 17.5, -0.5)
-
-[node name="Plattforms" type="Node3D" parent="Level[1]"]
-
-[node name="Plattform" type="Node3D" parent="Level[1]/Plattforms"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2, 0, 0)
-
-[node name="Block1" parent="Level[1]/Plattforms/Plattform" instance=ExtResource("3_tefeu")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.5, 0, -0.5)
-
-[node name="dirt_with_grass2" parent="Level[1]/Plattforms/Plattform/Block1" instance=ExtResource("2_tbgi4")]
-
-[node name="Block2" parent="Level[1]/Plattforms/Plattform" instance=ExtResource("3_tefeu")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.5, 0, -0.5)
-
-[node name="dirt2" parent="Level[1]/Plattforms/Plattform/Block2" instance=ExtResource("4_o6xl0")]
-
-[node name="Block3" parent="Level[1]/Plattforms/Plattform" instance=ExtResource("3_tefeu")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.5, 0, -0.5)
-
-[node name="dirt_with_grass2" parent="Level[1]/Plattforms/Plattform/Block3" instance=ExtResource("2_tbgi4")]
-
-[node name="Block4" parent="Level[1]/Plattforms/Plattform" instance=ExtResource("3_tefeu")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.5, 0, 0.5)
-
-[node name="dirt_with_grass2" parent="Level[1]/Plattforms/Plattform/Block4" instance=ExtResource("2_tbgi4")]
-
-[node name="Block5" parent="Level[1]/Plattforms/Plattform" instance=ExtResource("3_tefeu")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.5, 0, 0.5)
-
-[node name="dirt2" parent="Level[1]/Plattforms/Plattform/Block5" instance=ExtResource("4_o6xl0")]
-
-[node name="Block6" parent="Level[1]/Plattforms/Plattform" instance=ExtResource("3_tefeu")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.5, 0, 0.5)
-
-[node name="dirt_with_grass2" parent="Level[1]/Plattforms/Plattform/Block6" instance=ExtResource("2_tbgi4")]
-
-[node name="Block7" parent="Level[1]/Plattforms/Plattform" instance=ExtResource("3_tefeu")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.5, 0, 1.5)
-
-[node name="dirt_with_grass2" parent="Level[1]/Plattforms/Plattform/Block7" instance=ExtResource("2_tbgi4")]
-
-[node name="Block8" parent="Level[1]/Plattforms/Plattform" instance=ExtResource("3_tefeu")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.5, 0, 1.5)
-
-[node name="dirt_with_grass2" parent="Level[1]/Plattforms/Plattform/Block8" instance=ExtResource("2_tbgi4")]
-
-[node name="Block9" parent="Level[1]/Plattforms/Plattform" instance=ExtResource("3_tefeu")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.5, 0, 1.5)
-
-[node name="dirt_with_grass2" parent="Level[1]/Plattforms/Plattform/Block9" instance=ExtResource("2_tbgi4")]
-
-[node name="Plattform2" type="Node3D" parent="Level[1]/Plattforms"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.5, -5)
-
-[node name="Block1" parent="Level[1]/Plattforms/Plattform2" instance=ExtResource("3_tefeu")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.5, 0, -0.5)
-
-[node name="dirt_with_grass2" parent="Level[1]/Plattforms/Plattform2/Block1" instance=ExtResource("2_tbgi4")]
-
-[node name="Block2" parent="Level[1]/Plattforms/Plattform2" instance=ExtResource("3_tefeu")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.5, 0, -0.5)
-
-[node name="dirt_with_grass2" parent="Level[1]/Plattforms/Plattform2/Block2" instance=ExtResource("2_tbgi4")]
-
-[node name="Block3" parent="Level[1]/Plattforms/Plattform2" instance=ExtResource("3_tefeu")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.5, 0, -0.5)
-
-[node name="dirt_with_grass2" parent="Level[1]/Plattforms/Plattform2/Block3" instance=ExtResource("2_tbgi4")]
-
-[node name="Block4" parent="Level[1]/Plattforms/Plattform2" instance=ExtResource("3_tefeu")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.5, 0, 0.5)
-
-[node name="dirt2" parent="Level[1]/Plattforms/Plattform2/Block4" instance=ExtResource("4_o6xl0")]
-
-[node name="Block5" parent="Level[1]/Plattforms/Plattform2" instance=ExtResource("3_tefeu")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.5, 0, 0.5)
-
-[node name="dirt2" parent="Level[1]/Plattforms/Plattform2/Block5" instance=ExtResource("4_o6xl0")]
-
-[node name="Block6" parent="Level[1]/Plattforms/Plattform2" instance=ExtResource("3_tefeu")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.5, 0, 0.5)
-
-[node name="dirt2" parent="Level[1]/Plattforms/Plattform2/Block6" instance=ExtResource("4_o6xl0")]
-
-[node name="Block7" parent="Level[1]/Plattforms/Plattform2" instance=ExtResource("3_tefeu")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.5, 0, 1.5)
-
-[node name="dirt_with_grass2" parent="Level[1]/Plattforms/Plattform2/Block7" instance=ExtResource("2_tbgi4")]
-
-[node name="Block8" parent="Level[1]/Plattforms/Plattform2" instance=ExtResource("3_tefeu")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.5, 0, 1.5)
-
-[node name="dirt2" parent="Level[1]/Plattforms/Plattform2/Block8" instance=ExtResource("4_o6xl0")]
-
-[node name="Block9" parent="Level[1]/Plattforms/Plattform2" instance=ExtResource("3_tefeu")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.5, 0, 1.5)
-
-[node name="dirt_with_grass2" parent="Level[1]/Plattforms/Plattform2/Block9" instance=ExtResource("2_tbgi4")]
-
-[node name="Block10" parent="Level[1]/Plattforms/Plattform2" instance=ExtResource("3_tefeu")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.49999997, 0, -0.5)
-
-[node name="dirt_with_grass2" parent="Level[1]/Plattforms/Plattform2/Block10" instance=ExtResource("2_tbgi4")]
-
-[node name="Block11" parent="Level[1]/Plattforms/Plattform2" instance=ExtResource("3_tefeu")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.49999997, 0, 0.5)
-
-[node name="dirt2" parent="Level[1]/Plattforms/Plattform2/Block11" instance=ExtResource("4_o6xl0")]
-
-[node name="Block12" parent="Level[1]/Plattforms/Plattform2" instance=ExtResource("3_tefeu")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.49999997, 0, 1.5)
-
-[node name="dirt_with_grass2" parent="Level[1]/Plattforms/Plattform2/Block12" instance=ExtResource("2_tbgi4")]
-
-[node name="Block13" parent="Level[1]/Plattforms/Plattform2" instance=ExtResource("3_tefeu")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.5, 0, -0.5)
-
-[node name="dirt_with_grass2" parent="Level[1]/Plattforms/Plattform2/Block13" instance=ExtResource("2_tbgi4")]
-
-[node name="Block14" parent="Level[1]/Plattforms/Plattform2" instance=ExtResource("3_tefeu")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.5, 0, 0.5)
-
-[node name="dirt2" parent="Level[1]/Plattforms/Plattform2/Block14" instance=ExtResource("4_o6xl0")]
-
-[node name="Block15" parent="Level[1]/Plattforms/Plattform2" instance=ExtResource("3_tefeu")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.5, 0, 1.5)
-
-[node name="dirt_with_grass2" parent="Level[1]/Plattforms/Plattform2/Block15" instance=ExtResource("2_tbgi4")]
-
-[node name="Block16" parent="Level[1]/Plattforms/Plattform2" instance=ExtResource("3_tefeu")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.5, 0, -0.5)
-
-[node name="dirt_with_grass2" parent="Level[1]/Plattforms/Plattform2/Block16" instance=ExtResource("2_tbgi4")]
-
-[node name="Block17" parent="Level[1]/Plattforms/Plattform2" instance=ExtResource("3_tefeu")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.5, 0, 0.5)
-
-[node name="dirt2" parent="Level[1]/Plattforms/Plattform2/Block17" instance=ExtResource("4_o6xl0")]
-
-[node name="Block18" parent="Level[1]/Plattforms/Plattform2" instance=ExtResource("3_tefeu")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.5, 0, 1.5)
-
-[node name="dirt_with_grass2" parent="Level[1]/Plattforms/Plattform2/Block18" instance=ExtResource("2_tbgi4")]
-
-[node name="Block19" parent="Level[1]/Plattforms/Plattform2" instance=ExtResource("3_tefeu")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.5, 0, -0.5)
-
-[node name="dirt_with_grass2" parent="Level[1]/Plattforms/Plattform2/Block19" instance=ExtResource("2_tbgi4")]
-
-[node name="Block22" parent="Level[1]/Plattforms/Plattform2" instance=ExtResource("3_tefeu")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.5, 0, -0.5)
-
-[node name="dirt_with_grass2" parent="Level[1]/Plattforms/Plattform2/Block22" instance=ExtResource("2_tbgi4")]
-
-[node name="Block20" parent="Level[1]/Plattforms/Plattform2" instance=ExtResource("3_tefeu")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.5, 0, 0.5)
-
-[node name="dirt2" parent="Level[1]/Plattforms/Plattform2/Block20" instance=ExtResource("4_o6xl0")]
-
-[node name="Block21" parent="Level[1]/Plattforms/Plattform2" instance=ExtResource("3_tefeu")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.5, 0, 1.5)
-
-[node name="dirt_with_grass2" parent="Level[1]/Plattforms/Plattform2/Block21" instance=ExtResource("2_tbgi4")]
-
-[node name="Block23" parent="Level[1]/Plattforms/Plattform2" instance=ExtResource("3_tefeu")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.5, 0, -0.5)
-
-[node name="dirt_with_grass2" parent="Level[1]/Plattforms/Plattform2/Block23" instance=ExtResource("2_tbgi4")]
-
-[node name="Block24" parent="Level[1]/Plattforms/Plattform2" instance=ExtResource("3_tefeu")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.5, 0, 0.5)
-
-[node name="dirt_with_grass2" parent="Level[1]/Plattforms/Plattform2/Block24" instance=ExtResource("2_tbgi4")]
-
-[node name="Block25" parent="Level[1]/Plattforms/Plattform2" instance=ExtResource("3_tefeu")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.5, 0, 1.5)
-
-[node name="dirt_with_grass2" parent="Level[1]/Plattforms/Plattform2/Block25" instance=ExtResource("2_tbgi4")]
-
-[node name="Plattform3" type="Node3D" parent="Level[1]/Plattforms"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6, 4.5, -5)
-
-[node name="Block1" parent="Level[1]/Plattforms/Plattform3" instance=ExtResource("3_tefeu")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.5, 0, -0.5)
-
-[node name="wood2" parent="Level[1]/Plattforms/Plattform3/Block1" instance=ExtResource("6_tefeu")]
-transform = Transform3D(-4.371139e-08, -1, 0, 1, -4.371139e-08, 0, 0, 0, 1, 0, 0, 0)
-
-[node name="Block2" parent="Level[1]/Plattforms/Plattform3" instance=ExtResource("3_tefeu")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.5, 0, -0.5)
-
-[node name="wood2" parent="Level[1]/Plattforms/Plattform3/Block2" instance=ExtResource("6_tefeu")]
-transform = Transform3D(-4.371139e-08, -1, 0, 1, -4.371139e-08, 0, 0, 0, 1, 0, 0, 0)
-
-[node name="Block3" parent="Level[1]/Plattforms/Plattform3" instance=ExtResource("3_tefeu")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.5, 0, -0.5)
-
-[node name="wood2" parent="Level[1]/Plattforms/Plattform3/Block3" instance=ExtResource("6_tefeu")]
-transform = Transform3D(-4.371139e-08, -1, 0, 1, -4.371139e-08, 0, 0, 0, 1, 0, 0, 0)
-
-[node name="Block4" parent="Level[1]/Plattforms/Plattform3" instance=ExtResource("3_tefeu")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.5, 0, 0.5)
-
-[node name="wood2" parent="Level[1]/Plattforms/Plattform3/Block4" instance=ExtResource("6_tefeu")]
-transform = Transform3D(-4.371139e-08, -1, 0, 1, -4.371139e-08, 0, 0, 0, 1, 0, 0, 0)
-
-[node name="Block5" parent="Level[1]/Plattforms/Plattform3" instance=ExtResource("3_tefeu")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.5, 0, 0.5)
-
-[node name="wood2" parent="Level[1]/Plattforms/Plattform3/Block5" instance=ExtResource("6_tefeu")]
-transform = Transform3D(-4.371139e-08, -1, 0, 1, -4.371139e-08, 0, 0, 0, 1, 0, 0, 0)
-
-[node name="Block6" parent="Level[1]/Plattforms/Plattform3" instance=ExtResource("3_tefeu")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.5, 0, 0.5)
-
-[node name="wood2" parent="Level[1]/Plattforms/Plattform3/Block6" instance=ExtResource("6_tefeu")]
-transform = Transform3D(-4.371139e-08, -1, 0, 1, -4.371139e-08, 0, 0, 0, 1, 0, 0, 0)
-
-[node name="Block7" parent="Level[1]/Plattforms/Plattform3" instance=ExtResource("3_tefeu")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.5, 0, 1.5)
-
-[node name="wood2" parent="Level[1]/Plattforms/Plattform3/Block7" instance=ExtResource("6_tefeu")]
-transform = Transform3D(-4.371139e-08, -1, 0, 1, -4.371139e-08, 0, 0, 0, 1, 0, 0, 0)
-
-[node name="Block8" parent="Level[1]/Plattforms/Plattform3" instance=ExtResource("3_tefeu")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.5, 0, 1.5)
-
-[node name="wood2" parent="Level[1]/Plattforms/Plattform3/Block8" instance=ExtResource("6_tefeu")]
-transform = Transform3D(-4.371139e-08, -1, 0, 1, -4.371139e-08, 0, 0, 0, 1, 0, 0, 0)
-
-[node name="Block9" parent="Level[1]/Plattforms/Plattform3" instance=ExtResource("3_tefeu")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.5, 0, 1.5)
-
-[node name="wood2" parent="Level[1]/Plattforms/Plattform3/Block9" instance=ExtResource("6_tefeu")]
-transform = Transform3D(-4.371139e-08, -1, 0, 1, -4.371139e-08, 0, 0, 0, 1, 0, 0, 0)
-
-[node name="Plattform4" type="Node3D" parent="Level[1]/Plattforms"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -9, 8.5, -5)
-
-[node name="Block1" parent="Level[1]/Plattforms/Plattform4" instance=ExtResource("3_tefeu")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.5, 0, -0.5)
-
-[node name="wood2" parent="Level[1]/Plattforms/Plattform4/Block1" instance=ExtResource("6_tefeu")]
-transform = Transform3D(-4.371139e-08, -1, 0, 1, -4.371139e-08, 0, 0, 0, 1, 0, 0, 0)
-
-[node name="Block2" parent="Level[1]/Plattforms/Plattform4" instance=ExtResource("3_tefeu")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.5, 0, -0.5)
-
-[node name="wood2" parent="Level[1]/Plattforms/Plattform4/Block2" instance=ExtResource("6_tefeu")]
-transform = Transform3D(-4.371139e-08, -1, 0, 1, -4.371139e-08, 0, 0, 0, 1, 0, 0, 0)
-
-[node name="Block3" parent="Level[1]/Plattforms/Plattform4" instance=ExtResource("3_tefeu")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.5, 0, -0.5)
-
-[node name="wood2" parent="Level[1]/Plattforms/Plattform4/Block3" instance=ExtResource("6_tefeu")]
-transform = Transform3D(-4.371139e-08, -1, 0, 1, -4.371139e-08, 0, 0, 0, 1, 0, 0, 0)
-
-[node name="Block4" parent="Level[1]/Plattforms/Plattform4" instance=ExtResource("3_tefeu")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.5, 0, 0.5)
-
-[node name="wood2" parent="Level[1]/Plattforms/Plattform4/Block4" instance=ExtResource("6_tefeu")]
-transform = Transform3D(-4.371139e-08, -1, 0, 1, -4.371139e-08, 0, 0, 0, 1, 0, 0, 0)
-
-[node name="Block5" parent="Level[1]/Plattforms/Plattform4" instance=ExtResource("3_tefeu")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.5, 0, 0.5)
-
-[node name="wood2" parent="Level[1]/Plattforms/Plattform4/Block5" instance=ExtResource("6_tefeu")]
-transform = Transform3D(-4.371139e-08, -1, 0, 1, -4.371139e-08, 0, 0, 0, 1, 0, 0, 0)
-
-[node name="Block6" parent="Level[1]/Plattforms/Plattform4" instance=ExtResource("3_tefeu")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.5, 0, 0.5)
-
-[node name="wood2" parent="Level[1]/Plattforms/Plattform4/Block6" instance=ExtResource("6_tefeu")]
-transform = Transform3D(-4.371139e-08, -1, 0, 1, -4.371139e-08, 0, 0, 0, 1, 0, 0, 0)
-
-[node name="Block7" parent="Level[1]/Plattforms/Plattform4" instance=ExtResource("3_tefeu")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.5, 0, 1.5)
-
-[node name="wood2" parent="Level[1]/Plattforms/Plattform4/Block7" instance=ExtResource("6_tefeu")]
-transform = Transform3D(-4.371139e-08, -1, 0, 1, -4.371139e-08, 0, 0, 0, 1, 0, 0, 0)
-
-[node name="Block8" parent="Level[1]/Plattforms/Plattform4" instance=ExtResource("3_tefeu")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.5, 0, 1.5)
-
-[node name="wood2" parent="Level[1]/Plattforms/Plattform4/Block8" instance=ExtResource("6_tefeu")]
-transform = Transform3D(-4.371139e-08, -1, 0, 1, -4.371139e-08, 0, 0, 0, 1, 0, 0, 0)
-
-[node name="Block9" parent="Level[1]/Plattforms/Plattform4" instance=ExtResource("3_tefeu")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.5, 0, 1.5)
-
-[node name="wood2" parent="Level[1]/Plattforms/Plattform4/Block9" instance=ExtResource("6_tefeu")]
-transform = Transform3D(-4.371139e-08, -1, 0, 1, -4.371139e-08, 0, 0, 0, 1, 0, 0, 0)
-
-[node name="Plattform5" type="Node3D" parent="Level[1]/Plattforms"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -9, 12.5, -8)
-
-[node name="Block1" parent="Level[1]/Plattforms/Plattform5" instance=ExtResource("3_tefeu")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.5, 0, -0.5)
-
-[node name="wood2" parent="Level[1]/Plattforms/Plattform5/Block1" instance=ExtResource("6_tefeu")]
-transform = Transform3D(-4.371139e-08, -1, 0, 1, -4.371139e-08, 0, 0, 0, 1, 0, 0, 0)
-
-[node name="Block2" parent="Level[1]/Plattforms/Plattform5" instance=ExtResource("3_tefeu")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.5, 0, -0.5)
-
-[node name="wood2" parent="Level[1]/Plattforms/Plattform5/Block2" instance=ExtResource("6_tefeu")]
-transform = Transform3D(-4.371139e-08, -1, 0, 1, -4.371139e-08, 0, 0, 0, 1, 0, 0, 0)
-
-[node name="Block3" parent="Level[1]/Plattforms/Plattform5" instance=ExtResource("3_tefeu")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.5, 0, -0.5)
-
-[node name="wood2" parent="Level[1]/Plattforms/Plattform5/Block3" instance=ExtResource("6_tefeu")]
-transform = Transform3D(-4.371139e-08, -1, 0, 1, -4.371139e-08, 0, 0, 0, 1, 0, 0, 0)
-
-[node name="Block4" parent="Level[1]/Plattforms/Plattform5" instance=ExtResource("3_tefeu")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.5, 0, 0.5)
-
-[node name="wood2" parent="Level[1]/Plattforms/Plattform5/Block4" instance=ExtResource("6_tefeu")]
-transform = Transform3D(-4.371139e-08, -1, 0, 1, -4.371139e-08, 0, 0, 0, 1, 0, 0, 0)
-
-[node name="Block5" parent="Level[1]/Plattforms/Plattform5" instance=ExtResource("3_tefeu")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.5, 0, 0.5)
-
-[node name="wood2" parent="Level[1]/Plattforms/Plattform5/Block5" instance=ExtResource("6_tefeu")]
-transform = Transform3D(-4.371139e-08, -1, 0, 1, -4.371139e-08, 0, 0, 0, 1, 0, 0, 0)
-
-[node name="Block6" parent="Level[1]/Plattforms/Plattform5" instance=ExtResource("3_tefeu")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.5, 0, 0.5)
-
-[node name="wood2" parent="Level[1]/Plattforms/Plattform5/Block6" instance=ExtResource("6_tefeu")]
-transform = Transform3D(-4.371139e-08, -1, 0, 1, -4.371139e-08, 0, 0, 0, 1, 0, 0, 0)
-
-[node name="Block7" parent="Level[1]/Plattforms/Plattform5" instance=ExtResource("3_tefeu")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.5, 0, 1.5)
-
-[node name="wood2" parent="Level[1]/Plattforms/Plattform5/Block7" instance=ExtResource("6_tefeu")]
-transform = Transform3D(-4.371139e-08, -1, 0, 1, -4.371139e-08, 0, 0, 0, 1, 0, 0, 0)
-
-[node name="Block8" parent="Level[1]/Plattforms/Plattform5" instance=ExtResource("3_tefeu")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.5, 0, 1.5)
-
-[node name="wood2" parent="Level[1]/Plattforms/Plattform5/Block8" instance=ExtResource("6_tefeu")]
-transform = Transform3D(-4.371139e-08, -1, 0, 1, -4.371139e-08, 0, 0, 0, 1, 0, 0, 0)
-
-[node name="Block9" parent="Level[1]/Plattforms/Plattform5" instance=ExtResource("3_tefeu")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.5, 0, 1.5)
-
-[node name="wood2" parent="Level[1]/Plattforms/Plattform5/Block9" instance=ExtResource("6_tefeu")]
-transform = Transform3D(-4.371139e-08, -1, 0, 1, -4.371139e-08, 0, 0, 0, 1, 0, 0, 0)
-
-[node name="Plattform6" type="Node3D" parent="Level[1]/Plattforms"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6, 16.5, -8)
-
-[node name="Block1" parent="Level[1]/Plattforms/Plattform6" instance=ExtResource("3_tefeu")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.5, 0, -0.5)
-
-[node name="wood2" parent="Level[1]/Plattforms/Plattform6/Block1" instance=ExtResource("6_tefeu")]
-transform = Transform3D(-4.371139e-08, -1, 0, 1, -4.371139e-08, 0, 0, 0, 1, 0, 0, 0)
-
-[node name="Block2" parent="Level[1]/Plattforms/Plattform6" instance=ExtResource("3_tefeu")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.5, 0, -0.5)
-
-[node name="wood2" parent="Level[1]/Plattforms/Plattform6/Block2" instance=ExtResource("6_tefeu")]
-transform = Transform3D(-4.371139e-08, -1, 0, 1, -4.371139e-08, 0, 0, 0, 1, 0, 0, 0)
-
-[node name="Block3" parent="Level[1]/Plattforms/Plattform6" instance=ExtResource("3_tefeu")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.5, 0, -0.5)
-
-[node name="wood2" parent="Level[1]/Plattforms/Plattform6/Block3" instance=ExtResource("6_tefeu")]
-transform = Transform3D(-4.371139e-08, -1, 0, 1, -4.371139e-08, 0, 0, 0, 1, 0, 0, 0)
-
-[node name="Block4" parent="Level[1]/Plattforms/Plattform6" instance=ExtResource("3_tefeu")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.5, 0, 0.5)
-
-[node name="wood2" parent="Level[1]/Plattforms/Plattform6/Block4" instance=ExtResource("6_tefeu")]
-transform = Transform3D(-4.371139e-08, -1, 0, 1, -4.371139e-08, 0, 0, 0, 1, 0, 0, 0)
-
-[node name="Block5" parent="Level[1]/Plattforms/Plattform6" instance=ExtResource("3_tefeu")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.5, 0, 0.5)
-
-[node name="wood2" parent="Level[1]/Plattforms/Plattform6/Block5" instance=ExtResource("6_tefeu")]
-transform = Transform3D(-4.371139e-08, -1, 0, 1, -4.371139e-08, 0, 0, 0, 1, 0, 0, 0)
-
-[node name="Block6" parent="Level[1]/Plattforms/Plattform6" instance=ExtResource("3_tefeu")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.5, 0, 0.5)
-
-[node name="wood2" parent="Level[1]/Plattforms/Plattform6/Block6" instance=ExtResource("6_tefeu")]
-transform = Transform3D(-4.371139e-08, -1, 0, 1, -4.371139e-08, 0, 0, 0, 1, 0, 0, 0)
-
-[node name="Block7" parent="Level[1]/Plattforms/Plattform6" instance=ExtResource("3_tefeu")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.5, 0, 1.5)
-
-[node name="wood2" parent="Level[1]/Plattforms/Plattform6/Block7" instance=ExtResource("6_tefeu")]
-transform = Transform3D(-4.371139e-08, -1, 0, 1, -4.371139e-08, 0, 0, 0, 1, 0, 0, 0)
-
-[node name="Block8" parent="Level[1]/Plattforms/Plattform6" instance=ExtResource("3_tefeu")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.5, 0, 1.5)
-
-[node name="wood2" parent="Level[1]/Plattforms/Plattform6/Block8" instance=ExtResource("6_tefeu")]
-transform = Transform3D(-4.371139e-08, -1, 0, 1, -4.371139e-08, 0, 0, 0, 1, 0, 0, 0)
-
-[node name="Block9" parent="Level[1]/Plattforms/Plattform6" instance=ExtResource("3_tefeu")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.5, 0, 1.5)
-
-[node name="wood2" parent="Level[1]/Plattforms/Plattform6/Block9" instance=ExtResource("6_tefeu")]
-transform = Transform3D(-4.371139e-08, -1, 0, 1, -4.371139e-08, 0, 0, 0, 1, 0, 0, 0)
-
-[node name="Plattform7" type="Node3D" parent="Level[1]/Plattforms"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6, 20.5, -5)
-
-[node name="Block1" parent="Level[1]/Plattforms/Plattform7" instance=ExtResource("3_tefeu")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.5, 0, -0.5)
-
-[node name="wood2" parent="Level[1]/Plattforms/Plattform7/Block1" instance=ExtResource("6_tefeu")]
-transform = Transform3D(-4.371139e-08, -1, 0, 1, -4.371139e-08, 0, 0, 0, 1, 0, 0, 0)
-
-[node name="Block2" parent="Level[1]/Plattforms/Plattform7" instance=ExtResource("3_tefeu")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.5, 0, -0.5)
-
-[node name="wood2" parent="Level[1]/Plattforms/Plattform7/Block2" instance=ExtResource("6_tefeu")]
-transform = Transform3D(-4.371139e-08, -1, 0, 1, -4.371139e-08, 0, 0, 0, 1, 0, 0, 0)
-
-[node name="Block3" parent="Level[1]/Plattforms/Plattform7" instance=ExtResource("3_tefeu")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.5, 0, -0.5)
-
-[node name="wood2" parent="Level[1]/Plattforms/Plattform7/Block3" instance=ExtResource("6_tefeu")]
-transform = Transform3D(-4.371139e-08, -1, 0, 1, -4.371139e-08, 0, 0, 0, 1, 0, 0, 0)
-
-[node name="Block4" parent="Level[1]/Plattforms/Plattform7" instance=ExtResource("3_tefeu")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.5, 0, 0.5)
-
-[node name="wood2" parent="Level[1]/Plattforms/Plattform7/Block4" instance=ExtResource("6_tefeu")]
-transform = Transform3D(-4.371139e-08, -1, 0, 1, -4.371139e-08, 0, 0, 0, 1, 0, 0, 0)
-
-[node name="Block5" parent="Level[1]/Plattforms/Plattform7" instance=ExtResource("3_tefeu")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.5, 0, 0.5)
-
-[node name="wood2" parent="Level[1]/Plattforms/Plattform7/Block5" instance=ExtResource("6_tefeu")]
-transform = Transform3D(-4.371139e-08, -1, 0, 1, -4.371139e-08, 0, 0, 0, 1, 0, 0, 0)
-
-[node name="Block6" parent="Level[1]/Plattforms/Plattform7" instance=ExtResource("3_tefeu")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.5, 0, 0.5)
-
-[node name="wood2" parent="Level[1]/Plattforms/Plattform7/Block6" instance=ExtResource("6_tefeu")]
-transform = Transform3D(-4.371139e-08, -1, 0, 1, -4.371139e-08, 0, 0, 0, 1, 0, 0, 0)
-
-[node name="Block7" parent="Level[1]/Plattforms/Plattform7" instance=ExtResource("3_tefeu")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.5, 0, 1.5)
-
-[node name="wood2" parent="Level[1]/Plattforms/Plattform7/Block7" instance=ExtResource("6_tefeu")]
-transform = Transform3D(-4.371139e-08, -1, 0, 1, -4.371139e-08, 0, 0, 0, 1, 0, 0, 0)
-
-[node name="Block8" parent="Level[1]/Plattforms/Plattform7" instance=ExtResource("3_tefeu")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.5, 0, 1.5)
-
-[node name="wood2" parent="Level[1]/Plattforms/Plattform7/Block8" instance=ExtResource("6_tefeu")]
-transform = Transform3D(-4.371139e-08, -1, 0, 1, -4.371139e-08, 0, 0, 0, 1, 0, 0, 0)
-
-[node name="Block9" parent="Level[1]/Plattforms/Plattform7" instance=ExtResource("3_tefeu")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.5, 0, 1.5)
-
-[node name="wood2" parent="Level[1]/Plattforms/Plattform7/Block9" instance=ExtResource("6_tefeu")]
-transform = Transform3D(-4.371139e-08, -1, 0, 1, -4.371139e-08, 0, 0, 0, 1, 0, 0, 0)
-
-[node name="Plattform8" type="Node3D" parent="Level[1]/Plattforms"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6, 20.5, -1.9999999)
-
-[node name="Block1" parent="Level[1]/Plattforms/Plattform8" instance=ExtResource("3_tefeu")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.5, 0, -0.5)
-
-[node name="wood2" parent="Level[1]/Plattforms/Plattform8/Block1" instance=ExtResource("6_tefeu")]
-transform = Transform3D(-4.371139e-08, -1, 0, 1, -4.371139e-08, 0, 0, 0, 1, 0, 0, 0)
-
-[node name="Block2" parent="Level[1]/Plattforms/Plattform8" instance=ExtResource("3_tefeu")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.5, 0, -0.5)
-
-[node name="wood2" parent="Level[1]/Plattforms/Plattform8/Block2" instance=ExtResource("6_tefeu")]
-transform = Transform3D(-4.371139e-08, -1, 0, 1, -4.371139e-08, 0, 0, 0, 1, 0, 0, 0)
-
-[node name="Block3" parent="Level[1]/Plattforms/Plattform8" instance=ExtResource("3_tefeu")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.5, 0, -0.5)
-
-[node name="wood2" parent="Level[1]/Plattforms/Plattform8/Block3" instance=ExtResource("6_tefeu")]
-transform = Transform3D(-4.371139e-08, -1, 0, 1, -4.371139e-08, 0, 0, 0, 1, 0, 0, 0)
-
-[node name="Block4" parent="Level[1]/Plattforms/Plattform8" instance=ExtResource("3_tefeu")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.5, 0, 0.5)
-
-[node name="wood2" parent="Level[1]/Plattforms/Plattform8/Block4" instance=ExtResource("6_tefeu")]
-transform = Transform3D(-4.371139e-08, -1, 0, 1, -4.371139e-08, 0, 0, 0, 1, 0, 0, 0)
-
-[node name="Block5" parent="Level[1]/Plattforms/Plattform8" instance=ExtResource("3_tefeu")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.5, 0, 0.5)
-
-[node name="wood2" parent="Level[1]/Plattforms/Plattform8/Block5" instance=ExtResource("6_tefeu")]
-transform = Transform3D(-4.371139e-08, -1, 0, 1, -4.371139e-08, 0, 0, 0, 1, 0, 0, 0)
-
-[node name="Block6" parent="Level[1]/Plattforms/Plattform8" instance=ExtResource("3_tefeu")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.5, 0, 0.5)
-
-[node name="wood2" parent="Level[1]/Plattforms/Plattform8/Block6" instance=ExtResource("6_tefeu")]
-transform = Transform3D(-4.371139e-08, -1, 0, 1, -4.371139e-08, 0, 0, 0, 1, 0, 0, 0)
-
-[node name="Block7" parent="Level[1]/Plattforms/Plattform8" instance=ExtResource("3_tefeu")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.5, 0, 1.5)
-
-[node name="wood2" parent="Level[1]/Plattforms/Plattform8/Block7" instance=ExtResource("6_tefeu")]
-transform = Transform3D(-4.371139e-08, -1, 0, 1, -4.371139e-08, 0, 0, 0, 1, 0, 0, 0)
-
-[node name="Block8" parent="Level[1]/Plattforms/Plattform8" instance=ExtResource("3_tefeu")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.5, 0, 1.5)
-
-[node name="wood2" parent="Level[1]/Plattforms/Plattform8/Block8" instance=ExtResource("6_tefeu")]
-transform = Transform3D(-4.371139e-08, -1, 0, 1, -4.371139e-08, 0, 0, 0, 1, 0, 0, 0)
-
-[node name="Block9" parent="Level[1]/Plattforms/Plattform8" instance=ExtResource("3_tefeu")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.5, 0, 1.5)
-
-[node name="wood2" parent="Level[1]/Plattforms/Plattform8/Block9" instance=ExtResource("6_tefeu")]
-transform = Transform3D(-4.371139e-08, -1, 0, 1, -4.371139e-08, 0, 0, 0, 1, 0, 0, 0)
-
-[node name="Block10" parent="Level[1]/Plattforms/Plattform8" instance=ExtResource("3_tefeu")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.5, 0, 2.5)
-
-[node name="wood2" parent="Level[1]/Plattforms/Plattform8/Block10" instance=ExtResource("6_tefeu")]
-transform = Transform3D(-4.371139e-08, -1, 0, 1, -4.371139e-08, 0, 0, 0, 1, 0, 0, 0)
-
-[node name="Block11" parent="Level[1]/Plattforms/Plattform8" instance=ExtResource("3_tefeu")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.5, 0, 2.5)
-
-[node name="wood2" parent="Level[1]/Plattforms/Plattform8/Block11" instance=ExtResource("6_tefeu")]
-transform = Transform3D(-4.371139e-08, -1, 0, 1, -4.371139e-08, 0, 0, 0, 1, 0, 0, 0)
-
-[node name="Block12" parent="Level[1]/Plattforms/Plattform8" instance=ExtResource("3_tefeu")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.5, 0, 2.5)
-
-[node name="wood2" parent="Level[1]/Plattforms/Plattform8/Block12" instance=ExtResource("6_tefeu")]
-transform = Transform3D(-4.371139e-08, -1, 0, 1, -4.371139e-08, 0, 0, 0, 1, 0, 0, 0)
-
-[node name="Block13" parent="Level[1]/Plattforms/Plattform8" instance=ExtResource("3_tefeu")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.5, 0, 3.5)
-
-[node name="wood2" parent="Level[1]/Plattforms/Plattform8/Block13" instance=ExtResource("6_tefeu")]
-transform = Transform3D(-4.371139e-08, -1, 0, 1, -4.371139e-08, 0, 0, 0, 1, 0, 0, 0)
-
-[node name="Block14" parent="Level[1]/Plattforms/Plattform8" instance=ExtResource("3_tefeu")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.5, 0, 3.5)
-
-[node name="wood2" parent="Level[1]/Plattforms/Plattform8/Block14" instance=ExtResource("6_tefeu")]
-transform = Transform3D(-4.371139e-08, -1, 0, 1, -4.371139e-08, 0, 0, 0, 1, 0, 0, 0)
-
-[node name="Block15" parent="Level[1]/Plattforms/Plattform8" instance=ExtResource("3_tefeu")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.5, 0, 3.5)
-
-[node name="wood2" parent="Level[1]/Plattforms/Plattform8/Block15" instance=ExtResource("6_tefeu")]
-transform = Transform3D(-4.371139e-08, -1, 0, 1, -4.371139e-08, 0, 0, 0, 1, 0, 0, 0)
-
-[node name="Block16" parent="Level[1]/Plattforms/Plattform8" instance=ExtResource("3_tefeu")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.5, 0, 1.5)
-
-[node name="wood2" parent="Level[1]/Plattforms/Plattform8/Block16" instance=ExtResource("6_tefeu")]
-transform = Transform3D(-4.371139e-08, -1, 0, 1, -4.371139e-08, 0, 0, 0, 1, 0, 0, 0)
-
-[node name="Block17" parent="Level[1]/Plattforms/Plattform8" instance=ExtResource("3_tefeu")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.5, 0, 2.5)
-
-[node name="wood2" parent="Level[1]/Plattforms/Plattform8/Block17" instance=ExtResource("6_tefeu")]
-transform = Transform3D(-4.371139e-08, -1, 0, 1, -4.371139e-08, 0, 0, 0, 1, 0, 0, 0)
-
-[node name="Block18" parent="Level[1]/Plattforms/Plattform8" instance=ExtResource("3_tefeu")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.5, 0, 3.5)
-
-[node name="wood2" parent="Level[1]/Plattforms/Plattform8/Block18" instance=ExtResource("6_tefeu")]
-transform = Transform3D(-4.371139e-08, -1, 0, 1, -4.371139e-08, 0, 0, 0, 1, 0, 0, 0)
-
-[node name="Block19" parent="Level[1]/Plattforms/Plattform8" instance=ExtResource("3_tefeu")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.5, 0, 1.5)
-
-[node name="wood2" parent="Level[1]/Plattforms/Plattform8/Block19" instance=ExtResource("6_tefeu")]
-transform = Transform3D(-4.371139e-08, -1, 0, 1, -4.371139e-08, 0, 0, 0, 1, 0, 0, 0)
-
-[node name="Block20" parent="Level[1]/Plattforms/Plattform8" instance=ExtResource("3_tefeu")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.5, 0, 2.5)
-
-[node name="wood2" parent="Level[1]/Plattforms/Plattform8/Block20" instance=ExtResource("6_tefeu")]
-transform = Transform3D(-4.371139e-08, -1, 0, 1, -4.371139e-08, 0, 0, 0, 1, 0, 0, 0)
-
-[node name="Block21" parent="Level[1]/Plattforms/Plattform8" instance=ExtResource("3_tefeu")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.5, 0, 3.5)
-
-[node name="wood2" parent="Level[1]/Plattforms/Plattform8/Block21" instance=ExtResource("6_tefeu")]
-transform = Transform3D(-4.371139e-08, -1, 0, 1, -4.371139e-08, 0, 0, 0, 1, 0, 0, 0)
-
-[node name="Block22" parent="Level[1]/Plattforms/Plattform8" instance=ExtResource("3_tefeu")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.5, 0, 1.5)
-
-[node name="wood2" parent="Level[1]/Plattforms/Plattform8/Block22" instance=ExtResource("6_tefeu")]
-transform = Transform3D(-4.371139e-08, -1, 0, 1, -4.371139e-08, 0, 0, 0, 1, 0, 0, 0)
-
-[node name="Block23" parent="Level[1]/Plattforms/Plattform8" instance=ExtResource("3_tefeu")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.5, 0, 2.5)
-
-[node name="wood2" parent="Level[1]/Plattforms/Plattform8/Block23" instance=ExtResource("6_tefeu")]
-transform = Transform3D(-4.371139e-08, -1, 0, 1, -4.371139e-08, 0, 0, 0, 1, 0, 0, 0)
-
-[node name="Block24" parent="Level[1]/Plattforms/Plattform8" instance=ExtResource("3_tefeu")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.5, 0, 3.5)
-
-[node name="wood2" parent="Level[1]/Plattforms/Plattform8/Block24" instance=ExtResource("6_tefeu")]
-transform = Transform3D(-4.371139e-08, -1, 0, 1, -4.371139e-08, 0, 0, 0, 1, 0, 0, 0)
-
-[node name="Block25" parent="Level[1]/Plattforms/Plattform8" instance=ExtResource("3_tefeu")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.5, 0, 1.5)
-
-[node name="wood2" parent="Level[1]/Plattforms/Plattform8/Block25" instance=ExtResource("6_tefeu")]
-transform = Transform3D(-4.371139e-08, -1, 0, 1, -4.371139e-08, 0, 0, 0, 1, 0, 0, 0)
-
-[node name="Block26" parent="Level[1]/Plattforms/Plattform8" instance=ExtResource("3_tefeu")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.5, 0, 2.5)
-
-[node name="wood2" parent="Level[1]/Plattforms/Plattform8/Block26" instance=ExtResource("6_tefeu")]
-transform = Transform3D(-4.371139e-08, -1, 0, 1, -4.371139e-08, 0, 0, 0, 1, 0, 0, 0)
-
-[node name="Block27" parent="Level[1]/Plattforms/Plattform8" instance=ExtResource("3_tefeu")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.5, 0, 3.5)
-
-[node name="wood2" parent="Level[1]/Plattforms/Plattform8/Block27" instance=ExtResource("6_tefeu")]
-transform = Transform3D(-4.371139e-08, -1, 0, 1, -4.371139e-08, 0, 0, 0, 1, 0, 0, 0)
-
-[node name="Block28" parent="Level[1]/Plattforms/Plattform8" instance=ExtResource("3_tefeu")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.5, 0, 1.5)
-
-[node name="wood2" parent="Level[1]/Plattforms/Plattform8/Block28" instance=ExtResource("6_tefeu")]
-transform = Transform3D(-4.371139e-08, -1, 0, 1, -4.371139e-08, 0, 0, 0, 1, 0, 0, 0)
-
-[node name="Block30" parent="Level[1]/Plattforms/Plattform8" instance=ExtResource("3_tefeu")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.5, 0, 1.5)
-
-[node name="wood2" parent="Level[1]/Plattforms/Plattform8/Block30" instance=ExtResource("6_tefeu")]
-transform = Transform3D(-4.371139e-08, -1, 0, 1, -4.371139e-08, 0, 0, 0, 1, 0, 0, 0)
-
-[node name="Block31" parent="Level[1]/Plattforms/Plattform8" instance=ExtResource("3_tefeu")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.5, 0, 2.5)
-
-[node name="wood2" parent="Level[1]/Plattforms/Plattform8/Block31" instance=ExtResource("6_tefeu")]
-transform = Transform3D(-4.371139e-08, -1, 0, 1, -4.371139e-08, 0, 0, 0, 1, 0, 0, 0)
-
-[node name="Block32" parent="Level[1]/Plattforms/Plattform8" instance=ExtResource("3_tefeu")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.5, 0, 3.5)
-
-[node name="wood2" parent="Level[1]/Plattforms/Plattform8/Block32" instance=ExtResource("6_tefeu")]
-transform = Transform3D(-4.371139e-08, -1, 0, 1, -4.371139e-08, 0, 0, 0, 1, 0, 0, 0)
-
-[node name="Block29" parent="Level[1]/Plattforms/Plattform8" instance=ExtResource("3_tefeu")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.5, 0, 3.5)
-
-[node name="wood2" parent="Level[1]/Plattforms/Plattform8/Block29" instance=ExtResource("6_tefeu")]
-transform = Transform3D(-4.371139e-08, -1, 0, 1, -4.371139e-08, 0, 0, 0, 1, 0, 0, 0)
-
-[node name="Plattform9" type="Node3D" parent="Level[1]/Plattforms"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -19, 16.5, 0)
-
-[node name="Block1" parent="Level[1]/Plattforms/Plattform9" instance=ExtResource("3_tefeu")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.5, 0, -0.5)
-
-[node name="stone2" parent="Level[1]/Plattforms/Plattform9/Block1" instance=ExtResource("9_trceg")]
-
-[node name="Block2" parent="Level[1]/Plattforms/Plattform9" instance=ExtResource("3_tefeu")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.5, 0, -0.5)
-
-[node name="stone2" parent="Level[1]/Plattforms/Plattform9/Block2" instance=ExtResource("9_trceg")]
-
-[node name="Block3" parent="Level[1]/Plattforms/Plattform9" instance=ExtResource("3_tefeu")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.5, 0, -0.5)
-
-[node name="stone2" parent="Level[1]/Plattforms/Plattform9/Block3" instance=ExtResource("9_trceg")]
-
-[node name="Block4" parent="Level[1]/Plattforms/Plattform9" instance=ExtResource("3_tefeu")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.5, 0, 0.5)
-
-[node name="stone2" parent="Level[1]/Plattforms/Plattform9/Block4" instance=ExtResource("9_trceg")]
-
-[node name="Block5" parent="Level[1]/Plattforms/Plattform9" instance=ExtResource("3_tefeu")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.5, 0, 0.5)
-
-[node name="glass2" parent="Level[1]/Plattforms/Plattform9/Block5" instance=ExtResource("10_a8y0u")]
-
-[node name="Block6" parent="Level[1]/Plattforms/Plattform9" instance=ExtResource("3_tefeu")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.5, 0, 0.5)
-
-[node name="stone2" parent="Level[1]/Plattforms/Plattform9/Block6" instance=ExtResource("9_trceg")]
-
-[node name="Block7" parent="Level[1]/Plattforms/Plattform9" instance=ExtResource("3_tefeu")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.5, 0, 1.5)
-
-[node name="stone2" parent="Level[1]/Plattforms/Plattform9/Block7" instance=ExtResource("9_trceg")]
-
-[node name="Block8" parent="Level[1]/Plattforms/Plattform9" instance=ExtResource("3_tefeu")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.5, 0, 1.5)
-
-[node name="stone2" parent="Level[1]/Plattforms/Plattform9/Block8" instance=ExtResource("9_trceg")]
-
-[node name="Block9" parent="Level[1]/Plattforms/Plattform9" instance=ExtResource("3_tefeu")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.5, 0, 1.5)
-
-[node name="stone2" parent="Level[1]/Plattforms/Plattform9/Block9" instance=ExtResource("9_trceg")]
-
-[node name="Plattform11" type="Node3D" parent="Level[1]/Plattforms"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -22, 16.5, 0)
-
-[node name="stone9" parent="Level[1]/Plattforms/Plattform11" instance=ExtResource("9_trceg")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.5, 0, -0.5)
-
-[node name="stone8" parent="Level[1]/Plattforms/Plattform11" instance=ExtResource("9_trceg")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.5, 0, -0.5)
-
-[node name="stone7" parent="Level[1]/Plattforms/Plattform11" instance=ExtResource("9_trceg")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.5, 0, -0.5)
-
-[node name="stone6" parent="Level[1]/Plattforms/Plattform11" instance=ExtResource("9_trceg")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.5, 0, 0.5)
-
-[node name="glass2" parent="Level[1]/Plattforms/Plattform11" instance=ExtResource("10_a8y0u")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.5, 0, 0.5)
-
-[node name="stone5" parent="Level[1]/Plattforms/Plattform11" instance=ExtResource("9_trceg")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.5, 0, 0.5)
-
-[node name="stone4" parent="Level[1]/Plattforms/Plattform11" instance=ExtResource("9_trceg")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.5, 0, 1.5)
-
-[node name="stone3" parent="Level[1]/Plattforms/Plattform11" instance=ExtResource("9_trceg")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.5, 0, 1.5)
-
-[node name="stone2" parent="Level[1]/Plattforms/Plattform11" instance=ExtResource("9_trceg")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.5, 0, 1.5)
-
-[node name="MovingCollision" type="AnimatableBody3D" parent="Level[1]/Plattforms/Plattform11"]
-collision_mask = 0
-sync_to_physics = false
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Level[1]/Plattforms/Plattform11/MovingCollision"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.5, 0, 0.5)
-shape = SubResource("BoxShape3D_trceg")
-
-[node name="AnimationPlayer" type="AnimationPlayer" parent="Level[1]/Plattforms/Plattform11"]
+[node name="Clear" type="Control" parent="CanvasLayer"]
+layout_mode = 3
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -20.0
+offset_right = 20.0
+offset_bottom = 20.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+
+[node name="Text" type="Label" parent="CanvasLayer/Clear"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -291.5
+offset_top = -820.0
+offset_right = 291.5
+offset_bottom = -691.9999
+grow_horizontal = 2
+grow_vertical = 2
+pivot_offset = Vector2(291.5, 68)
+text = "Clear!"
+label_settings = SubResource("LabelSettings_eb6dy")
+horizontal_alignment = 1
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="CanvasLayer/Clear" groups=["clearUI"]]
+root_node = NodePath("../Text")
 libraries = {
-&"": SubResource("AnimationLibrary_jkv2x")
+&"": SubResource("AnimationLibrary_gqmmt")
 }
-autoplay = "move"
 
-[node name="Plattform10" type="Node3D" parent="Level[1]/Plattforms"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -30, 16.5, 0)
+[node name="T_Game" type="Timer" parent="."]
+process_mode = 1
+autostart = true
 
-[node name="Block1" parent="Level[1]/Plattforms/Plattform10" instance=ExtResource("3_tefeu")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.5, 0, -0.5)
-
-[node name="stone2" parent="Level[1]/Plattforms/Plattform10/Block1" instance=ExtResource("9_trceg")]
-
-[node name="Block2" parent="Level[1]/Plattforms/Plattform10" instance=ExtResource("3_tefeu")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.5, 0, -0.5)
-
-[node name="stone2" parent="Level[1]/Plattforms/Plattform10/Block2" instance=ExtResource("9_trceg")]
-
-[node name="Block3" parent="Level[1]/Plattforms/Plattform10" instance=ExtResource("3_tefeu")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.5, 0, -0.5)
-
-[node name="stone2" parent="Level[1]/Plattforms/Plattform10/Block3" instance=ExtResource("9_trceg")]
-
-[node name="Block4" parent="Level[1]/Plattforms/Plattform10" instance=ExtResource("3_tefeu")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.5, 0, 0.5)
-
-[node name="stone2" parent="Level[1]/Plattforms/Plattform10/Block4" instance=ExtResource("9_trceg")]
-
-[node name="Block5" parent="Level[1]/Plattforms/Plattform10" instance=ExtResource("3_tefeu")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.5, 0, 0.5)
-
-[node name="glass2" parent="Level[1]/Plattforms/Plattform10/Block5" instance=ExtResource("10_a8y0u")]
-
-[node name="Block6" parent="Level[1]/Plattforms/Plattform10" instance=ExtResource("3_tefeu")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.5, 0, 0.5)
-
-[node name="stone2" parent="Level[1]/Plattforms/Plattform10/Block6" instance=ExtResource("9_trceg")]
-
-[node name="Block7" parent="Level[1]/Plattforms/Plattform10" instance=ExtResource("3_tefeu")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.5, 0, 1.5)
-
-[node name="stone2" parent="Level[1]/Plattforms/Plattform10/Block7" instance=ExtResource("9_trceg")]
-
-[node name="Block8" parent="Level[1]/Plattforms/Plattform10" instance=ExtResource("3_tefeu")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.5, 0, 1.5)
-
-[node name="stone2" parent="Level[1]/Plattforms/Plattform10/Block8" instance=ExtResource("9_trceg")]
-
-[node name="Block9" parent="Level[1]/Plattforms/Plattform10" instance=ExtResource("3_tefeu")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.5, 0, 1.5)
-
-[node name="stone2" parent="Level[1]/Plattforms/Plattform10/Block9" instance=ExtResource("9_trceg")]
-
-[node name="DeathPlane" type="Area3D" parent="Level[1]"]
-collision_layer = 0
-collision_mask = 2
-script = ExtResource("7_o6xl0")
-
-[node name="Shape" type="CollisionShape3D" parent="Level[1]/DeathPlane"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -9, 0)
-shape = SubResource("WorldBoundaryShape3D_tipki")
-
-[node name="Enemies" type="Node3D" parent="Level[1]"]
-
-[node name="Enemy" parent="Level[1]/Enemies" instance=ExtResource("14_a8y0u")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.5, 3, -4.5)
-
-[node name="Enemy2" parent="Level[1]/Enemies" instance=ExtResource("14_a8y0u")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8.5, 5, -4.5)
-
-[node name="Enemy3" parent="Level[1]/Enemies" instance=ExtResource("14_a8y0u")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -11.5, 13, -7.5)
-
-[node name="Enemy4" parent="Level[1]/Enemies" instance=ExtResource("14_a8y0u")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.5, 21, 0.5)
-
-[node name="Enemy5" parent="Level[1]/Enemies" instance=ExtResource("14_a8y0u")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -24.5, 17, 0.5)
-
-[node name="Respawn" type="Marker3D" parent="Level[1]"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.5, 6.5, 0.4)
+[node name="Level[2]" parent="." instance=ExtResource("12_eb6dy")]
 
 [connection signal="timeout" from="T_Game" to="." method="addSec"]
-[connection signal="area_entered" from="Level[1]/DeathPlane" to="Level[1]/DeathPlane" method="entered"]

@@ -1,0 +1,17 @@
+[gd_scene load_steps=3 format=3 uid="uid://c5sxlj4d0ijai"]
+
+[ext_resource type="PackedScene" uid="uid://crb4hos3ib515" path="res://models/KayKit_BlockBits_1.0_FREE/Assets/gltf/wood.gltf" id="1_n2j4l"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_clfto"]
+size = Vector3(1, 7, 1)
+
+[node name="Pillar" type="Node3D"]
+
+[node name="wood2" parent="." instance=ExtResource("1_n2j4l")]
+transform = Transform3D(1, 0, 0, 0, 3, 0, 0, 0, 1, 0, 0, 0)
+
+[node name="StaticBody3D" type="StaticBody3D" parent="."]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D"]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 0, 0.5, 0)
+shape = SubResource("BoxShape3D_clfto")

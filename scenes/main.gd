@@ -32,5 +32,9 @@ func _input(event: InputEvent) -> void:
 		togglePause()
 		Game.player.capture_mouse()
 
+func playGoal():
+	$Music.stream = load("res://sounds/heart container 1.wav")
+	$Music.play()
+
 func resetGame():
 	get_tree().change_scene_to_file("res://scenes/mainScreen.tscn")
